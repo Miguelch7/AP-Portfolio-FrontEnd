@@ -1,5 +1,85 @@
+:root {
+  --white: #FFFFFF;
+  --black: #050409;
+  --light-green: #43d465;
+  --green: #28a745;
+  --dark-green: #19772f;
+  --light-red: #f14152;
+  --red: #d6282b;
+  --dark-red: #a10d10;
+  --light-blue: #142ea8;
+  --blue: #0c2185;
+  --dark-blue: #060e48;
+}
+
+/* Generales */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 * {
   font-family: 'Nunito', 'Lucida Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HEADER */
+header {
+  padding: .5rem 2rem;
+  background-color: var(--black);
+}
+
+/* Menú de navegación */
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+header figure {
+  width: 8%;
+  margin: 0;
+}
+
+header figure img {
+  width: 100%;
+}
+
+/* Menú */
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+  list-style-type: none;
+}
+
+.enlace {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.enlace:hover,
+.enlace:focus {
+  font-weight: bold;
+  color: var(--light-green);
+  transition: ease-in-out .2s;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  border-radius: .3em;
+}
+
+#btn-login {
+  color: #FFFFFF;
+  background-color: var(--green);
+}
+
+#btn-login:hover,
+#btn-login:focus {
+  transition: ease-in-out .2s;
+  background-color: var(--light-green);
 }
