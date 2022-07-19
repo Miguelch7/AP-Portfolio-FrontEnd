@@ -114,3 +114,50 @@ header nav ul {
   margin: .2em 0;
   color: var(--white);
 }
+
+/* MAIN */
+main {
+  padding: 0em 2em;
+}
+
+h2 {
+  margin: .5em 0;
+}
+
+/* Sobre mí */
+#sobre-mi {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  margin: auto;
+  padding: 2em 0;
+}
+
+#sobre-mi h2 {
+  text-align: start;
+}
+
+#sobre-mi figure {
+  width: 20%;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+#sobre-mi div {
+  width: 60%;
+}
+
+#sobre-mi button {
+  border: none;
+  color: #FFFFFF;
+  background-color: var(--green);
+}
+
+#sobre-mi button:hover,
+#sobre-mi button:focus {
+  cursor: pointer;
+  background-color: var(--light-green);
+  transition: ease-in-out .2s;
+}
