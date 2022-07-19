@@ -161,3 +161,31 @@ h2 {
   background-color: var(--light-green);
   transition: ease-in-out .2s;
 }
+
+/* Experiencia - Educación */
+#experiencia h2 {
+  display: block;
+  width: 100%;
+}
+
+#experiencia article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em auto;
+  width: 90%;
+  padding: 2em 1em;
+  border-radius: 1em;
+  background-color: #E7E7E7;
+}
+
+#experiencia article figure {
+  width: 20%;
+}
+
+#experiencia .info {
+  border-left: .3em solid var(--green);
+  padding: 0 1em;
+  width: 75%;
+}
