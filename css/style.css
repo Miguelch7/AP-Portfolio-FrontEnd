@@ -312,3 +312,73 @@ h2 {
   opacity: 100;
   transition: all .5s ease-in-out;
 }
+
+/* FOOTER */
+#contactame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+#contactame h2 {
+  text-align: center;
+}
+
+#contactame form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#contactame form input,
+#contactame form textarea {
+  width: 100%;
+  margin: .5em;
+  padding: .5em;
+  border: none;
+  border-radius: .2em;
+}
+
+#contactame form input[type="submit"] {
+  width: 50%;
+  border: none;
+  background-color: var(--green);
+  color: white;
+}
+
+#contactame form input[type="submit"]:hover,
+#contactame form input[type="submit"]:focus {
+  cursor: pointer;
+  background-color: var(--light-green);
+  transition: ease-in-out .2s;
+}
+
+#redes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 1em 0;
+}
+
+#redes figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-green);
+  max-height: 3rem;
+  overflow: hidden;
+  width: 25%;
+  margin: 0 .2em;
+  clip-path: circle();
+}
+
+#redes figure img {
+  width: 25%;
+}
