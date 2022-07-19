@@ -232,3 +232,83 @@ h2 {
   margin: .3em 0;
   text-align: center;
 }
+
+/* Proyectos */
+#proyectos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+
+#proyectos h2 {
+  width: 100%;
+}
+
+.proyecto {
+  width: 30%;
+}
+
+.proyecto figure {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.proyecto figure img {
+  width: 100%;
+  border-radius: 1em;
+  transition: all .5s ease-in-out;
+}
+
+.proyecto figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  height: 99%;
+  bottom: 0;
+  margin-bottom: .2em;
+  padding: .8em;
+  box-sizing: border-box;
+  text-align: center;
+  background: #060e48c5;
+  color: #ffffff;
+  border-radius: 1em;
+  opacity: 0;
+}
+
+.btn-web {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-web:hover,
+.btn-web:focus {
+  background-color: var(--light-blue);
+  transition: all .3s ease-in-out;
+}
+
+.btn-github {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.btn-github:hover,
+.btn-github:focus {
+  background-color: var(--light-green);
+  transition: all .3s ease-in-out;
+}
+
+.proyecto figure:hover img {
+  filter: grayscale(0);
+}
+
+.proyecto figure:hover figcaption {
+  opacity: 100;
+  transition: all .5s ease-in-out;
+}
