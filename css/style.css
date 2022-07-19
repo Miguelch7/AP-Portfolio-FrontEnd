@@ -193,3 +193,42 @@ h2 {
   padding: 0 1em;
   width: 75%;
 }
+
+/* Hard & Soft Skills */
+#skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#skills h2 {
+  display: block;
+  width: 100%;
+}
+
+.skills-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+
+.skills-item figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  clip-path: circle();
+  width: 100%;
+}
+
+.skills-item figure img {
+  width: 100%;
+}
+
+.skills-item figure figcaption {
+  margin: .3em 0;
+  text-align: center;
+}
