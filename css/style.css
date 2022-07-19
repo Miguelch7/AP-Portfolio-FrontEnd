@@ -163,12 +163,14 @@ h2 {
 }
 
 /* Experiencia - Educación */
-#experiencia h2 {
+#experiencia h2,
+#educacion h2 {
   display: block;
   width: 100%;
 }
 
-#experiencia article {
+#experiencia article,
+#educacion article {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -180,11 +182,13 @@ h2 {
   background-color: #E7E7E7;
 }
 
-#experiencia article figure {
+#experiencia article figure,
+#educacion article figure {
   width: 20%;
 }
 
-#experiencia .info {
+#experiencia .info,
+#educacion .info {
   border-left: .3em solid var(--green);
   padding: 0 1em;
   width: 75%;
