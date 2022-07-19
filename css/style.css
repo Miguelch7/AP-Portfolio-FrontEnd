@@ -23,8 +23,21 @@ a {
   text-decoration: none;
 }
 
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+}
+
+section h2 {
+  text-align: center;
+}
+
 /* HEADER */
 header {
+  margin: 0;
   padding: .5rem 2rem;
   background-color: var(--black);
 }
@@ -40,7 +53,6 @@ header nav {
 /* Logo */
 header figure {
   width: 8%;
-  margin: 0;
 }
 
 header figure img {
@@ -82,4 +94,23 @@ header nav ul {
 #btn-login:focus {
   transition: ease-in-out .2s;
   background-color: var(--light-green);
+}
+
+/* Banner */
+#banner {
+  width: 100%;
+  background-image: url("../img/banner.jpg");
+  background-size: cover;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner h1,
+#banner h3, 
+#banner h5 {
+  margin: .2em 0;
+  color: var(--white);
 }
