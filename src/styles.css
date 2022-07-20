@@ -2,6 +2,36 @@
 @import '~normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
+:root {
+  --white: #FFFFFF;
+  --black: #050409;
+  --light-green: #43d465;
+  --green: #28a745;
+}
+
 * {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Nunito', 'Lucida Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .3em;
 }
