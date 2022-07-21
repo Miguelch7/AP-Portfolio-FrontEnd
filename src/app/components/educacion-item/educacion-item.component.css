@@ -1,4 +1,4 @@
-.experiencia-item {
+.educacion-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,7 +11,7 @@
   background-color: var(--light-grey);
 }
 
-.experiencia-item figure {
+.educacion-item figure {
   width: 20%;
 }
 
@@ -30,30 +30,30 @@
   text-align: justify;
 }
 
-.info-empresa {
+.info-institucion {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
-.info-empresa h4,
-.info-empresa p {
+.info-institucion h4,
+.info-institucion p {
   margin-top: 0;
   margin-bottom: .75rem;
 }
 
-.info-empresa p {
+.info-institucion p {
   font-style: italic;
   color: var(--dark-grey);
 }
 
 @media (max-width: 768px) {
-  .experiencia-item {
+  .educacion-item {
     flex-direction: column;
   }
 
-  .experiencia-item figure {
+  .educacion-item figure {
     width: 40%;
   }
 

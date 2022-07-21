@@ -9,6 +9,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { EducacionItemComponent } from './components/educacion-item/educacion-item.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ExperienciaItemComponent } from './components/experiencia-item/experien
     MenuComponent,
     SobreMiComponent,
     ExperienciaComponent,
-    ExperienciaItemComponent
+    ExperienciaItemComponent,
+    EducacionComponent,
+    EducacionItemComponent
   ],
   imports: [
     BrowserModule,

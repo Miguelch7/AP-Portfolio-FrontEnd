@@ -1,0 +1,9 @@
+<section id="educacion">
+  <h2 class="title">Educación</h2>
+  
+  <article *ngFor="let educacion of listadoEducacion">
+    <app-educacion-item
+      [educacion]="educacion"
+    ></app-educacion-item>
+  </article>
+</section>
