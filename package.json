@@ -23,6 +23,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "ngx-typed-js": "^2.1.1",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
