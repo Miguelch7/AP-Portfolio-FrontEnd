@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -19,6 +20,9 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 
+const appRoutes: Routes = [
+  { path: '**', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
@@ -35,10 +39,11 @@ import { FooterComponent } from './components/footer/footer.component';
     SkillsItemComponent,
     ProyectosComponent,
     ProyectosItemComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
     FontAwesomeModule,
     NgxTypedJsModule,
     NgCircleProgressModule.forRoot()
