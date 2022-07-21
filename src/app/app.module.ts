@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
     HeaderComponent,
     MenuComponent,
     SobreMiComponent,
-    ExperienciaComponent
+    ExperienciaComponent,
+    ExperienciaItemComponent
   ],
   imports: [
     BrowserModule,
