@@ -16,6 +16,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { SkillsItemComponent } from './components/skills-item/skills-item.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ProyectosItemComponent } from './components/proyectos-item/proyectos-it
     SkillsComponent,
     SkillsItemComponent,
     ProyectosComponent,
-    ProyectosItemComponent
+    ProyectosItemComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

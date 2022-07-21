@@ -1,0 +1,26 @@
+<footer id="contactame">
+  <h2>Contáctame</h2>
+  <form>
+    <div class="form-control">
+      <fa-icon [icon]="faUser"></fa-icon>
+      <input type="text" placeholder="Nombre">
+    </div>
+    <div class="form-control">
+      <fa-icon [icon]="faAt"></fa-icon>
+      <input type="text" placeholder="Email">
+    </div>
+    <div class="form-control">
+      <fa-icon [icon]="faEnvelope"></fa-icon>
+      <textarea name="mensaje" id="mensaje" rows="10" placeholder="Mensaje"></textarea>
+    </div>
+    <input class="btn" type="submit" value="Enviar Mensaje">
+  </form>
+  <div id="redes">
+    <a href="#" target="_blank" alt="" title="Ir a LinkedIn"><fa-icon [icon]="faLinkedinIn"></fa-icon></a>
+    <a href="#" target="_blank" alt="" title="Ir a Facebook"><fa-icon [icon]="faFacebookSquare"></fa-icon></a>
+    <a href="#" target="_blank" alt="" title="Ir a Instagram"><fa-icon [icon]="faInstagram"></fa-icon></a>
+    <a href="#" target="_blank" alt="" title="Ir a GitHub"><fa-icon [icon]="faGithub"></fa-icon></a>
+    <a href="#" target="_blank" alt="" title="Ir a Gmail"><fa-icon [icon]="faEnvelope"></fa-icon></a>
+  </div>
+  <p>&copy; Copyright {{ year }}, Miguel Chanampa - Todos los derechos reservados.</p>
+</footer>
