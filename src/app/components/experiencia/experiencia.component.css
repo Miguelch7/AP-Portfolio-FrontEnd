@@ -1,0 +1,68 @@
+#experiencia {
+  width: 90%;
+  margin: auto;
+}
+
+#experiencia article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem auto;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  background-color: var(--light-grey);
+}
+
+#experiencia article figure {
+  width: 20%;
+}
+
+.info {
+  border-left: .3em solid var(--green);
+  padding: 0 1rem;
+  width: 75%;
+}
+
+.info h3,
+.info p {
+  margin: .75rem 0;
+}
+
+.info p {
+  text-align: justify;
+}
+
+.info-empresa {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-empresa h4,
+.info-empresa p {
+  margin-top: 0;
+  margin-bottom: .75rem;
+}
+
+.info-empresa p {
+  font-style: italic;
+  color: var(--dark-grey);
+}
+
+@media (max-width: 768px) {
+  #experiencia article {
+    flex-direction: column;
+  }
+
+  #experiencia article figure {
+    width: 50%;
+  }
+
+  .info {
+    width: 90%;
+  }
+} 

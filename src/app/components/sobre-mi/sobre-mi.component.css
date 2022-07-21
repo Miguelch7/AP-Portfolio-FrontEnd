@@ -37,9 +37,6 @@
 
 #sobre-mi div h2 {
   text-align: start;
-  display: inline-block;
-  border-bottom: .2rem solid var(--green);
-  margin: .75rem 0;
 }
 
 #sobre-mi div p {
@@ -73,11 +70,6 @@
 
   #sobre-mi div {
     width: 100%;
-  }
-
-  #sobre-mi div h2 {
-    margin: 1rem 0;
-    text-align: center;
   }
 
   #sobre-mi button {

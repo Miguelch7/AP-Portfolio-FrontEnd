@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    SobreMiComponent
+    SobreMiComponent,
+    ExperienciaComponent
   ],
   imports: [
     BrowserModule,

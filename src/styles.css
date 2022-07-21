@@ -4,6 +4,7 @@
 
 :root {
   --white: #FFFFFF;
+  --light-grey: #F7F7F7;
   --dark-grey: #505050;
   --black: #050409;
   --transparent-black: rgba(0, 0, 0, 0.3);
@@ -42,3 +43,16 @@ ul {
   border: none;
   border-radius: .3em;
 }
+
+.title {
+  display: inline-block;
+  border-bottom: .2rem solid var(--green);
+  margin: .75rem 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin: 1rem;
+    text-align: center;
+  }
+} 
