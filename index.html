@@ -12,6 +12,7 @@
 </head>
 <body>
   <header>
+    <!-- MENU DE NAVEGACION -->
     <nav>
       <figure>
         <a href="./index.html">
@@ -25,9 +26,161 @@
         <li><a class="enlace" href="#skills" alt="Ir a skills">Skills</a></li>
         <li><a class="enlace" href="#proyectos" alt="Ir a proyectos">Proyectos</a></li>
         <li><a class="enlace" href="#contactame" alt="Ir a contáctame">Contáctame</a></li>
-        <li><a class="btn" id="btn-login" href="./html/longin.html" alt="Iniciar sesión">Login</a></li>
+        <li><a class="btn" id="btn-login" href="./html/login.html" alt="Iniciar sesión">Login</a></li>
       </ul>
     </nav>
   </header>
+
+  <!-- BANNER -->
+  <section id="banner">
+    <h4>Hola!</h4>
+    <h1>Soy Miguel Chanampa</h1>
+    <h3>Desarrollador FullStack | QA</h3>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+    <!-- SECCION SOBRE MI -->
+    <section id="sobre-mi">
+      <figure>
+        <img src="./img/foto.jpg" alt="Mi foto">
+      </figure>
+      <div>
+        <h2>Sobre mí</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sed quod ipsum libero, enim sunt nam quis explicabo saepe asperiores mollitia! Quisquam deleniti omnis architecto enim. Velit ipsa debitis unde.</p>
+
+        <button class="btn">Descargar CV</button>
+      </div>
+    </section>
+
+    <!-- SECCION EXPERIENCIA -->
+    <section id="experiencia">
+      <h2>Experiencia</h2>
+      
+      <article>
+        <figure>
+          <img src="./img/logo_company.png" alt="Logotipo Company">
+        </figure>
+        <div class="info">
+          <h3>Puesto de trabajo</h3>
+          <h4>Nombre empresa</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos exercitationem libero, soluta reiciendis voluptates quod molestias laborum veniam minus deleniti, quia inventore iure illum voluptatibus minima amet! Recusandae, eos</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- SECCION EDUCACION -->
+    <section id="educacion">
+      <h2>Educación</h2>
+
+      <article>
+        <figure>
+          <img src="./img/logo_university_1.jpg" alt="Logotipo University 1">
+        </figure>
+        <div class="info">
+          <h3>Nombre carrera</h3>
+          <h4>Universidad</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos exercitationem libero, soluta reiciendis voluptates quod molestias laborum veniam minus deleniti, quia inventore iure illum voluptatibus minima amet! Recusandae, eos</p>
+        </div>
+      </article>
+      
+      <article>
+        <figure>
+          <img src="./img/logo_university_2.jpg" alt="Logotipo University 2">
+        </figure>
+        <div class="info">
+          <h3>Nombre carrera 2</h3>
+          <h4>Universidad 2</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos exercitationem libero, soluta reiciendis voluptates quod molestias laborum veniam minus deleniti, quia inventore iure illum voluptatibus minima amet! Recusandae, eos</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- SECCION SKILLS -->
+    <section id="skills">
+      <h2>Hard & Soft-Skills</h2>
+
+      <article class="skills-item">
+        <figure>
+          <img src="./img/logo_html.jpg" alt="Logotipo HTML">
+        </figure>
+        <p>HTML</p>
+      </article>
+
+      <article class="skills-item">
+        <figure>
+          <img src="./img/logo_css.jpg" alt="Logotipo CSS">
+        </figure>
+        <p>CSS</p>
+      </article>
+
+      <article class="skills-item">
+        <figure>
+          <img src="./img/logo_js.jpg" alt="Logotipo JavaScript">
+        </figure>
+        <p>JavaScript</p>
+      </article>
+    </section>
+    
+    <!-- SECCION PROYECTOS -->
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      
+      <article class="proyecto">
+        <figure>
+          <img src="./img/project.jpg" alt="Imagen proyecto">
+          <figcaption>
+            <h4>Proyecto 1</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a class="btn btn-web" href="#">Ver Proyecto</a>
+            <a class="btn btn-github" href="#">Ir al repositorio</a>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="proyecto">
+        <figure>
+          <img src="./img/project.jpg" alt="Imagen proyecto">
+          <figcaption>
+            <h4>Proyecto 2</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a class="btn btn-web" href="#">Ver Proyecto</a>
+            <a class="btn btn-github" href="#">Ir al repositorio</a>
+          </figcaption>
+        </figure>
+      </article>
+
+      <article class="proyecto">
+        <figure>
+          <img src="./img/project.jpg" alt="Imagen proyecto">
+          <figcaption>
+            <h4>Proyecto 3</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <a class="btn btn-web" href="#">Ver Proyecto</a>
+            <a class="btn btn-github" href="#">Ir al repositorio</a>
+          </figcaption>
+        </figure>
+      </article>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer id="contactame">
+    <h2>Contáctame</h2>
+    <form action="">
+      <input type="text" placeholder="Nombre">
+      <input type="text" placeholder="Email">
+      <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+      <input class="btn" type="submit" value="Enviar Mensaje">
+    </form>
+    <div id="redes">
+      <figure><img src="./img/logo_facebook.jpg" alt="Logo Facebook"></figure>
+      <figure><img src="./img/logo_facebook.jpg" alt="Logo Facebook"></figure>
+      <figure><img src="./img/logo_facebook.jpg" alt="Logo Facebook"></figure>
+      <figure><img src="./img/logo_facebook.jpg" alt="Logo Facebook"></figure>
+      <figure><img src="./img/logo_facebook.jpg" alt="Logo Facebook"></figure>
+    </div>
+    <p>&copy; Copyright 2022, Miguel Chanampa - Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
