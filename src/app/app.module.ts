@@ -19,8 +19,10 @@ import { SkillsItemComponent } from './components/skills-item/skills-item.compon
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
 
 const appRoutes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: '**', component: HomeComponent }
 ];
 
@@ -40,6 +42,7 @@ const appRoutes: Routes = [
     ProyectosComponent,
     ProyectosItemComponent,
     FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
