@@ -1,6 +1,6 @@
 #banner {
   width: 100%;
-  background-image: url("../../../assets/img/banner.jpg");
+  background-image: linear-gradient(var(--transparent-black), var(--transparent-black)), url("../../../assets/img/banner.jpg");
   background-position: center;
   background-size: cover;
   height: 70vh;
@@ -27,15 +27,24 @@
 }
 
 #banner a {
-  margin: 2rem 0;
+  margin-top: 1rem;
   color: var(--white);
-  background-color: var(--green);
+  background-color: var(--blue);
   transition: all .3s ease-in-out;
 }
 
 #banner a:hover,
 #banner a:focus {
-  background-color: var(--light-green);
+  background-color: var(--light-blue);
+}
+
+h4 {
+  color: white;
+  font-weight: normal;
+}
+
+.etiqueta {
+  color: var(--light-orange);
 }
 
 @media (max-width: 768px) {

@@ -85,7 +85,7 @@ nav figure {
     height: calc(100% - 3rem);
     overflow-y: auto;
     transition: left .3s ease-in-out;
-    background-color: rgba(5, 4, 9, 0.9);
+    background-color: var(--transparent-dark-black);
   }
 
   .visible {
