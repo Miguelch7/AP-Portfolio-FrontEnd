@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxTypedJsModule } from 'ngx-typed-js';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -27,7 +28,8 @@ import { EducacionItemComponent } from './components/educacion-item/educacion-it
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    NgCircleProgressModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
