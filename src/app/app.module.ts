@@ -12,6 +12,8 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { ExperienciaItemComponent } from './components/experiencia-item/experiencia-item.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { EducacionItemComponent } from './components/educacion-item/educacion-item.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { SkillsItemComponent } from './components/skills-item/skills-item.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { EducacionItemComponent } from './components/educacion-item/educacion-it
     ExperienciaComponent,
     ExperienciaItemComponent,
     EducacionComponent,
-    EducacionItemComponent
+    EducacionItemComponent,
+    SkillsComponent,
+    SkillsItemComponent
   ],
   imports: [
     BrowserModule,
