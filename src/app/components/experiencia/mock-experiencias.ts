@@ -1,6 +1,6 @@
 import { Experiencia } from './Experiencia';
 
-export const EXPERIENCIAS: Experiencia[] = [
+export const LISTADO_EXPERIENCIAS: Experiencia[] = [
   {
     id: 1,
     titulo: 'Puesto de trabajo 1',

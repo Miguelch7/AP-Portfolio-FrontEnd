@@ -1,7 +1,7 @@
 export interface Proyecto {
   id: number;
   nombre: string;
-  descrpcion: string;
+  descripcion: string;
   imagen: string;
   link_proyecto: string;
   link_repositorio: string;
