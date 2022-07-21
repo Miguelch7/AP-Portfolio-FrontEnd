@@ -5,6 +5,7 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
@@ -22,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     HeaderComponent,
     MenuComponent,
     SobreMiComponent,
