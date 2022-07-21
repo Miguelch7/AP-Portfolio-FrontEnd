@@ -9,7 +9,7 @@
     (click)="onClick()"
   ></fa-icon>
 
-  <ul id="menu" [ngClass]="showMenu ? 'visible' : ''">
+  <ul id="menu" [ngClass]="showMenu ? 'visible' : ''" (click)="onClick()">
     <li class="menu-item"><a href="#sobre-mi" class="enlace" alt="Conoceme" title="Ir a Sobre mí">Sobre mí</a></li>
     <li class="menu-item"><a href="#experiencia" class="enlace" alt="Conoce sobre mi experiencia" title="Ir a Experiencia">Experiencia</a></li>
     <li class="menu-item"><a href="#educacion" class="enlace" alt="Conoce sobre mi educación" title="Ir a Educación">Educación</a></li>
