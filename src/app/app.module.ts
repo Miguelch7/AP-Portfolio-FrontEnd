@@ -14,6 +14,8 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { EducacionItemComponent } from './components/educacion-item/educacion-item.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { SkillsItemComponent } from './components/skills-item/skills-item.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { SkillsItemComponent } from './components/skills-item/skills-item.compon
     EducacionComponent,
     EducacionItemComponent,
     SkillsComponent,
-    SkillsItemComponent
+    SkillsItemComponent,
+    ProyectosComponent,
+    ProyectosItemComponent
   ],
   imports: [
     BrowserModule,

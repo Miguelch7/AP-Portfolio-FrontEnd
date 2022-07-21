@@ -1,0 +1,33 @@
+#proyectos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+#proyectos > div {
+  width: 100%;
+}
+
+#proyectos h2 {
+  display: inline-block;
+}
+
+#proyectos app-proyectos-item {
+  width: 30%;
+}
+
+@media (max-width: 1024px) {
+  #proyectos app-proyectos-item {
+    width: 45%;
+  }
+} 
+
+@media (max-width: 768px) {
+  #proyectos app-proyectos-item {
+    width: 90%;
+  }
+} 
