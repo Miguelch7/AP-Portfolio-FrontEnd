@@ -6,13 +6,15 @@ import { NgxTypedJsModule } from 'ngx-typed-js';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    SobreMiComponent
   ],
   imports: [
     BrowserModule,
