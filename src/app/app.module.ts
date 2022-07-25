@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
     FontAwesomeModule,
     NgxTypedJsModule,
     NgCircleProgressModule.forRoot()
