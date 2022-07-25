@@ -1,6 +1,6 @@
 export interface Experiencia {
   id: number;
-  titulo: string;
+  puesto: string;
   empresa: string;
   descripcion: string;
   imagen: string;
