@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Educacion } from '../educacion/Educacion';
-import { LISTADO_EDUCACION } from '../educacion/mock-educacion';
 
 @Component({
   selector: 'app-educacion-item',
@@ -9,7 +8,7 @@ import { LISTADO_EDUCACION } from '../educacion/mock-educacion';
 })
 export class EducacionItemComponent implements OnInit {
 
-  @Input() educacion: Educacion = LISTADO_EDUCACION[0];
+  @Input() educacion!: Educacion;
 
   constructor() { }
 
