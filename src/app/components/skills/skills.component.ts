@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from './Skill';
-import { LISTADO_SKILLS } from './mock-skills';
+import { SkillService } from '../../services/skill.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,11 +9,16 @@ import { LISTADO_SKILLS } from './mock-skills';
 })
 export class SkillsComponent implements OnInit {
 
-  skills: Skill[] = LISTADO_SKILLS;
+  skills: Skill[] = [];
 
-  constructor() { }
+  constructor(
+    private skillService: SkillService
+  ) { }
 
   ngOnInit(): void {
+    this.skillService.getSkills().subscribe((skills: Skill[]) => {
+      this.skills = skills;
+    });
   }
 
 }
