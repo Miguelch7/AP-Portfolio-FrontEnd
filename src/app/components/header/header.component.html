@@ -1,8 +1,8 @@
 <header>
   <app-menu></app-menu>
   <section id="banner">
-    <h1>MIGUEL CHANAMPA</h1>
-    <h3>Desarrollador FullStack</h3>
+    <h1>{{ nombre + ' ' + apellido }}</h1>
+    <h3>{{ profesion }}</h3>
 
     <ngx-typed-js [strings]="mensajes" [typeSpeed]="55" [backSpeed]="25" [loop]="true">
       <h4>
