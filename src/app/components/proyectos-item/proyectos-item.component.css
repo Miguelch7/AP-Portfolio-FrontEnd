@@ -1,0 +1,107 @@
+.proyecto {
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.proyecto figure {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.proyecto figure img {
+  width: 100%;
+  border-radius: 1rem;
+  transition: all .5s ease-in-out;
+}
+
+.proyecto figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  height: 99%;
+  bottom: 0;
+  margin-bottom: .2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  background: var(--transparent-medium-black);
+  color: #ffffff;
+  border-radius: 1rem;
+  opacity: 0;
+}
+
+.titulo-proyecto {
+  font-size: 1.5rem;
+  margin: .5rem;
+}
+
+.enlaces-proyecto {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+}
+
+.btn-web {
+  display: inline-block;
+  background-color: var(--blue);
+  color: var(--white);
+  margin: .5rem 0;
+}
+
+.btn-web:hover,
+.btn-web:focus {
+  background-color: var(--light-blue);
+  transition: all .3s ease-in-out;
+}
+
+.btn-github {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.btn-github:hover,
+.btn-github:focus {
+  background-color: var(--light-green);
+  transition: all .3s ease-in-out;
+}
+
+.proyecto figure:hover img {
+  filter: grayscale(0);
+}
+
+.proyecto figure:hover figcaption {
+  opacity: 100;
+  transition: all .5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .proyecto figure {
+    background-color: var(--light-grey);
+    border-radius: 1rem 1rem;
+  }
+
+  .proyecto figure img {
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .titulo-proyecto {
+    margin: .5rem 0;
+  }
+
+  .proyecto figure figcaption {
+    position: inherit;
+    color: var(--black);
+    opacity: 100;
+    background-color: transparent;
+    margin-bottom: 1rem;
+    transition: all .5s ease-in-out;
+  }
+} 

@@ -1,0 +1,19 @@
+.skills-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.skills-item p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.skills-item p span {
+  font-weight: normal;
+  font-size: .9rem;
+  color: var(--green);
+}

@@ -1,0 +1,21 @@
+<nav>
+  <figure>
+    <img src="assets/img/logo_argentina_programa.png" alt="Logotipo Argentina Programa">
+  </figure>
+
+  <fa-icon
+    [icon]="showMenu ? faTimes : faBars"
+    class="nav-toggle"
+    (click)="onClick()"
+  ></fa-icon>
+
+  <ul id="menu" [ngClass]="showMenu ? 'visible' : ''" (click)="onClick()">
+    <li class="menu-item"><a href="#sobre-mi" class="enlace" alt="Conoceme" title="Ir a Sobre mí">Sobre mí</a></li>
+    <li class="menu-item"><a href="#experiencia" class="enlace" alt="Conoce sobre mi experiencia" title="Ir a Experiencia">Experiencia</a></li>
+    <li class="menu-item"><a href="#educacion" class="enlace" alt="Conoce sobre mi educación" title="Ir a Educación">Educación</a></li>
+    <li class="menu-item"><a href="#skills" class="enlace" alt="Conoce sobre mis habilidades" title="Ir a Skills">Skills</a></li>
+    <li class="menu-item"><a href="#proyectos" class="enlace" alt="Conoce sobre mis proyectos" title="Ir a Proyectos">Proyectos</a></li>
+    <li class="menu-item"><a href="#contactame" class="enlace" alt="Contáctame" title="Ir a Contáctame">Contáctame</a></li>
+    <li class="menu-item"><a href="/login" id="btn-login" class="btn" alt="Iniciar sesión" title="Login">Login</a></li>
+  </ul>
+</nav>

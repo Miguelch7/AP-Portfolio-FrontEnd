@@ -1,0 +1,33 @@
+#skills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+#skills > div {
+  width: 100%;
+}
+
+#skills h2 {
+  display: inline-block;
+}
+
+#skills app-skills-item {
+  width: 15%;
+}
+
+@media (max-width: 1024px) {
+  #skills app-skills-item {
+    width: 25%;
+  }
+} 
+
+@media (max-width: 768px) {
+  #skills app-skills-item {
+    width: 50%;
+  }
+} 

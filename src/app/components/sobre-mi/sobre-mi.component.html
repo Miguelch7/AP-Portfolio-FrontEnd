@@ -1,0 +1,16 @@
+<section id="sobre-mi">
+  <figure>
+    <img src="{{ detalle && detalle.imagen }}" alt="Mi foto">
+    <figcaption>
+      <h4>{{ detalle && detalle.profesion }}</h4>
+      <fa-icon [icon]="faLocationDot"></fa-icon> {{ detalle && detalle.direccion }}
+    </figcaption>
+  </figure>
+  <div>
+    <h2 class="title">Sobre mí</h2>
+
+    <p>{{ detalle && detalle.descripcion }}</p>
+    
+    <button class="btn"><a target="_blank" href="{{ detalle && detalle.cv }}" download="MiCV.pdf"><fa-icon [icon]="faFileLines"></fa-icon> Descargar CV</a></button>
+  </div>
+</section>

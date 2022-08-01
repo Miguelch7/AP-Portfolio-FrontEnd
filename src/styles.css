@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  --white: #FFFFFF;
+  --light-grey: #F7F7F7;
+  --grey: #EEEEEE;
+  --dark-grey: #505050;
+  --black: #050409;
+  --transparent-black: rgba(0, 0, 0, 0.3);
+  --transparent-medium-black: rgba(5, 4, 9, 0.5);
+  --transparent-dark-black: rgba(5, 4, 9, 0.9);
+  --light-green: #43d465;
+  --green: #28a745;
+  --light-orange: #ffb650;
+  --light-blue: #378fe9;
+  --blue: #0a66c2;
+  --dark-blue: #0c2185;
+  --red: #d6282b;
+}
+
+* {
+  font-family: 'Nunito', 'Lucida Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .3em;
+}
+
+.title {
+  display: inline-block;
+  border-bottom: .2rem solid var(--green);
+  margin: .75rem 0;
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin: 1rem;
+    text-align: center;
+  }
+} 

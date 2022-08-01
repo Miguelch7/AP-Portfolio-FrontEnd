@@ -1,0 +1,59 @@
+#banner {
+  width: 100%;
+  background-image: linear-gradient(var(--transparent-black), var(--transparent-black)), url("../../../assets/img/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner h1,
+#banner h3 {
+  font-family: 'Ubuntu', sans-serif;
+  margin: .3rem 0;
+  color: var(--white);
+}
+
+#banner h1 {
+  font-size: 2.8rem;
+}
+
+#banner h3 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+#banner a {
+  margin-top: 1rem;
+  color: var(--white);
+  background-color: var(--blue);
+  transition: all .3s ease-in-out;
+}
+
+#banner a:hover,
+#banner a:focus {
+  background-color: var(--light-blue);
+}
+
+h4 {
+  color: white;
+  font-weight: normal;
+}
+
+.etiqueta {
+  color: var(--light-orange);
+}
+
+@media (max-width: 768px) {
+  #banner h1 {
+    font-size: 2.4rem;
+  }
+  
+  #banner h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+} 

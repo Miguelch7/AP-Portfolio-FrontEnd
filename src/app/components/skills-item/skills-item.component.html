@@ -1,0 +1,23 @@
+<article class="skills-item">
+  <circle-progress
+    [radius]="60"
+    [percent]="skill.porcentaje"
+    [space]="-10"
+    [innerStrokeWidth]="10"
+    [innerStrokeColor]="'var(--grey)'"
+    [outerStrokeWidth]="10"
+    [outerStrokeColor]="'var(--green)'"
+    [outerStrokeGradient]="true"
+    [outerStrokeGradientStopColor]="'var(--light-green)'"
+    [animation]="true"
+    [animationDuration]="1000"
+    [showImage]="true"
+    [imageSrc]="skill.imagen"
+    [imageHeight]="60"
+    [imageWidth]="60"
+    [renderOnClick]="true"
+    [lazy]="true"
+  ></circle-progress>
+  
+  <p>{{ skill.nombre }} - <span>{{ skill.porcentaje }}%</span></p>
+</article>

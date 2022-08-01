@@ -1,0 +1,17 @@
+<header>
+  <app-menu></app-menu>
+  <section id="banner">
+    <h1>{{ nombre + ' ' + apellido }}</h1>
+    <h3>{{ profesion }}</h3>
+
+    <ngx-typed-js [strings]="mensajes" [typeSpeed]="55" [backSpeed]="25" [loop]="true">
+      <h4>
+        &lt;<span class="etiqueta">code</span>&gt; 
+        Me gusta <span class="typing"></span> 
+        &lt;/<span class="etiqueta">code</span>&gt;
+      </h4>
+    </ngx-typed-js>
+
+    <a class="btn" href="https://www.linkedin.com/in/chanampamiguel/" target="_blank" alt="Visita mi perfil en LinkedIn" title="Ir a mi LinkedIn"><fa-icon [icon]="faLinkedin"></fa-icon> LinkedIn</a>
+  </section>
+</header>
