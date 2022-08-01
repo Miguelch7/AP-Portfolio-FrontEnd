@@ -1,17 +1,16 @@
 <section id="sobre-mi">
   <figure>
-    <img src="assets/img/foto.jpg" alt="Mi foto">
+    <img src="{{ detalle && detalle.imagen }}" alt="Mi foto">
     <figcaption>
-      <fa-icon [icon]="faLocationDot"></fa-icon> Tucumán, Argentina.
+      <h4>{{ detalle && detalle.profesion }}</h4>
+      <fa-icon [icon]="faLocationDot"></fa-icon> {{ detalle && detalle.direccion }}
     </figcaption>
   </figure>
   <div>
     <h2 class="title">Sobre mí</h2>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione sed quod ipsum libero, enim sunt nam quis explicabo saepe asperiores mollitia! Quisquam deleniti omnis architecto enim. Velit ipsa debitis unde.</p>
-
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui laborum harum earum exercitationem, quaerat dicta quam excepturi ex aperiam, at minus consequuntur cupiditate? Laboriosam minus amet enim quidem. Laborum, tempora.</p>
-
-    <button class="btn"><fa-icon [icon]="faFileLines"></fa-icon> Descargar CV</button>
+    <p>{{ detalle && detalle.descripcion }}</p>
+    
+    <button class="btn"><a target="_blank" href="{{ detalle && detalle.cv }}" download="MiCV.pdf"><fa-icon [icon]="faFileLines"></fa-icon> Descargar CV</a></button>
   </div>
 </section>
