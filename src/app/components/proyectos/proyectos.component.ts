@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from './Proyecto';
-import { LISTADO_PROYECTOS } from './mock-proyectos';
+import { ProyectoService } from '../../services/proyecto.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -9,11 +9,16 @@ import { LISTADO_PROYECTOS } from './mock-proyectos';
 })
 export class ProyectosComponent implements OnInit {
 
-  proyectos: Proyecto[] = LISTADO_PROYECTOS;
+  proyectos: Proyecto[] = [];
 
-  constructor() { }
+  constructor(
+    private proyectoService: ProyectoService
+  ) { }
 
   ngOnInit(): void {
+    this.proyectoService.getProyectos().subscribe((proyectos: Proyecto[]) => {
+      this.proyectos = proyectos;
+    })
   }
 
 }

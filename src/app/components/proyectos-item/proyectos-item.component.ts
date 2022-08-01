@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Proyecto } from '../proyectos/Proyecto';
-import { LISTADO_PROYECTOS } from '../proyectos/mock-proyectos';
 
 @Component({
   selector: 'app-proyectos-item',
@@ -9,7 +8,7 @@ import { LISTADO_PROYECTOS } from '../proyectos/mock-proyectos';
 })
 export class ProyectosItemComponent implements OnInit {
 
-  @Input() proyecto: Proyecto = LISTADO_PROYECTOS[0];
+  @Input() proyecto!: Proyecto;
 
   constructor() { }
 
