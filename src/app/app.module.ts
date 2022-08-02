@@ -21,6 +21,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    FormsModule,
     FontAwesomeModule,
     NgxTypedJsModule,
     NgCircleProgressModule.forRoot()
