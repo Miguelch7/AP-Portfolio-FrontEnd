@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { faCirclePlus, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { Experiencia } from './Experiencia';
-import { ExperienciaService } from '../../services/experiencia.service';
-import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
+import { AuthService } from '../../services/auth.service';
+import { ExperienciaService } from '../../services/experiencia.service';
+import { Experiencia } from './Experiencia';
 
 @Component({
   selector: 'app-experiencia',
@@ -16,8 +16,8 @@ export class ExperienciaComponent implements OnInit {
   iconAdd: IconDefinition = faCirclePlus;
 
   constructor(
-    private experienciaService: ExperienciaService,
-    public authService: AuthService
+    public authService: AuthService,
+    private experienciaService: ExperienciaService
   ) {}
 
   ngOnInit(): void {
@@ -182,9 +182,9 @@ export class ExperienciaComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.experienciaService.deleteExperiencia(experiencia).subscribe((res) => {
+        this.experienciaService.deleteExperiencia(experiencia).subscribe((id: number) => {
           Swal.fire('La experiencia se ha eliminado correctamente.', '', 'success');
-          this.experiencias = this.experiencias.filter(e => e.id !== experiencia.id);
+          this.experiencias = this.experiencias.filter(e => e.id !== id);
         });
       };
     });

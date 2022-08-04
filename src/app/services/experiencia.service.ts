@@ -45,7 +45,7 @@ export class ExperienciaService {
     return this.http.put<Experiencia>(`${ this.apiUrl }/${ id }`, null , { ...httpOptions, params });
   }
 
-  deleteExperiencia(experiencia: Experiencia): Observable<string> {
-    return this.http.delete<string>(`${ this.apiUrl }/${ experiencia.id }`, httpOptions);
+  deleteExperiencia(experiencia: Experiencia): Observable<number> {
+    return this.http.delete<number>(`${ this.apiUrl }/${ experiencia.id }`, httpOptions);
   }
 }
