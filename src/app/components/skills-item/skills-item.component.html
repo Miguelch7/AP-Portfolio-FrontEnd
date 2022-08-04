@@ -1,4 +1,8 @@
 <article class="skills-item">
+  <div *ngIf="authService.isLogged" class="btn-container">
+    <button class="btn-option btn-edit" title="Editar skill" (click)="onUpdate(skill)"><fa-icon [icon]="iconEdit"></fa-icon></button>
+    <button class="btn-option btn-delete" title="Eliminar skill" (click)="onDelete(skill)"><fa-icon [icon]="iconDelete"></fa-icon></button>
+  </div>
   <circle-progress
     [radius]="60"
     [percent]="skill.porcentaje"
