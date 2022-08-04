@@ -1,4 +1,8 @@
 <article class="experiencia-item">
+  <div *ngIf="authService.isLogged" class="btn-container">
+    <button class="btn-option btn-edit" title="Editar experiencia" (click)="onUpdate(experiencia)"><fa-icon [icon]="iconEdit"></fa-icon></button>
+    <button class="btn-option btn-delete" title="Eliminar experiencia" (click)="onDelete(experiencia)"><fa-icon [icon]="iconDelete"></fa-icon></button>
+  </div>
   <figure>
     <img src="{{ experiencia.imagen }}" alt="Logotipo {{ experiencia.empresa }}">
   </figure>
