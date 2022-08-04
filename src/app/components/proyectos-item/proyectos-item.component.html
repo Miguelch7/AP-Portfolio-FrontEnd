@@ -1,4 +1,8 @@
 <article class="proyecto">
+  <div *ngIf="authService.isLogged" class="btn-container">
+    <button class="btn-option btn-edit" title="Editar proyecto" (click)="onUpdate(proyecto)"><fa-icon [icon]="iconEdit"></fa-icon></button>
+    <button class="btn-option btn-delete" title="Eliminar proyecto" (click)="onDelete(proyecto)"><fa-icon [icon]="iconDelete"></fa-icon></button>
+  </div>
   <figure>
     <img src="{{ proyecto.imagen }}" alt="Imagen {{ proyecto.nombre }}">
     <figcaption>

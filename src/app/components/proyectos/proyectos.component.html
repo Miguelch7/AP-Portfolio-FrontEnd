@@ -1,10 +1,13 @@
 <section id="proyectos">
-  <div>
+  <div class="title-container">
     <h2 class="title">Proyectos</h2>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar proyecto" (click)="addProyecto()"><fa-icon [icon]="iconAdd"></fa-icon></button>
   </div>
   
   <app-proyectos-item
     *ngFor="let proyecto of proyectos"
     [proyecto]="proyecto"
+    (onUpdateProyecto)="updateProyecto(proyecto)"
+    (onDeleteProyecto)="deleteProyecto(proyecto)"
   ></app-proyectos-item>
 </section>
