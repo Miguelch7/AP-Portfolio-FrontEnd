@@ -23,7 +23,7 @@ export class DetalleService {
   ) { }
 
   getDetalle(): Observable<Detalle> {
-    return this.http.get<Detalle>(this.apiUrl, httpOptions);
+    return this.http.get<Detalle>(this.apiUrl);
   }
 
   updateDetalle(detalle: Detalle): Observable<Detalle> {

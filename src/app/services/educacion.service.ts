@@ -23,7 +23,7 @@ export class EducacionService {
   ) { }
 
   getEstudios(): Observable<Educacion[]> {
-    return this.http.get<Educacion[]>(this.apiUrl, httpOptions);
+    return this.http.get<Educacion[]>(this.apiUrl);
   }
 
   addEstudio(estudio: Educacion): Observable<Educacion> {

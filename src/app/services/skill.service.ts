@@ -23,7 +23,7 @@ export class SkillService {
   ) { }
 
   getSkills(): Observable<Skill[]> {
-    return this.http.get<Skill[]>(this.apiUrl, httpOptions);
+    return this.http.get<Skill[]>(this.apiUrl);
   }
 
   addSkill(skill: Skill): Observable<Skill> {
