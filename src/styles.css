@@ -13,11 +13,16 @@
   --transparent-dark-black: rgba(5, 4, 9, 0.9);
   --light-green: #43d465;
   --green: #28a745;
+  --dark-green: #19772f;
   --light-orange: #ffb650;
   --light-blue: #378fe9;
   --blue: #0a66c2;
   --dark-blue: #0c2185;
+  --light-red: #f14152;
   --red: #d6282b;
+  --dark-red: #a10d10;
+  --light-yellow: #f1e541;
+  --yellow: #e5d92b;
 }
 
 * {
@@ -41,16 +46,103 @@ ul {
   list-style-type: none;
 }
 
+.title {
+  display: inline-block;
+  border-bottom: .2rem solid var(--green);
+  margin: .75rem 0;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .btn {
   padding: .5rem 1rem;
   border: none;
   border-radius: .3em;
 }
 
-.title {
-  display: inline-block;
-  border-bottom: .2rem solid var(--green);
-  margin: .75rem 0;
+.btn-option {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-add {
+  color: var(--dark-green);
+  font-size: 1.8rem;
+}
+
+.btn-add:hover,
+.btn-add:focus {
+  color: var(--green);
+  cursor: pointer;
+}
+
+.btn-edit {
+  color: var(--yellow);
+  font-size: 1.3rem;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+  color: var(--light-yellow);
+  cursor: pointer;
+}
+
+.btn-delete {
+  color: var(--dark-red);
+  font-size: 1.3rem;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.btn-container .btn-option {
+  margin: 0 .3rem;
+}
+
+.form-sweet-alert {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-sweet-alert .form-control {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.form-sweet-alert .form-control label {
+  font-size: 1.1rem;
+  width: 30%;
+}
+
+.form-sweet-alert .form-control input,
+.form-sweet-alert .form-control textarea {
+  font-size: 1.1rem;
+  margin: 1rem 2rem;
+  padding: .5rem 1rem;
+  resize: none;
+  width: 100%;
 }
 
 @media (max-width: 768px) {

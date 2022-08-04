@@ -1,9 +1,14 @@
 <section id="educacion">
-  <h2 class="title">Educación</h2>
+  <div class="title-container">
+    <h2 class="title">Educacion</h2>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar educacion" (click)="addEducacion()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+  </div>
   
   <article *ngFor="let educacion of listadoEducacion">
     <app-educacion-item
       [educacion]="educacion"
+      (onUpdateEducacion)="updateEducacion(educacion)"
+      (onDeleteEducacion)="deleteEducacion(educacion)"
     ></app-educacion-item>
   </article>
 </section>

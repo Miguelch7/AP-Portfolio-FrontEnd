@@ -43,6 +43,17 @@ nav figure {
   background-color: var(--light-green);
 }
 
+#btn-logout {
+  color: var(--white);
+  background-color: var(--red);
+}
+
+#btn-logout:hover,
+#btn-logout:focus {
+  transition: ease-in-out .2s;
+  background-color: var(--light-red);
+}
+
 .nav-toggle {
   color: white;
   background: none;

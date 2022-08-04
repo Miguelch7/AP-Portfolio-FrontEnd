@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IconDefinition, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -12,13 +13,19 @@ export class MenuComponent implements OnInit {
   faBars: IconDefinition = faBars;
   faTimes: IconDefinition = faTimes;
 
-  constructor() { }
+  constructor(
+    public authService: AuthService
+  ) { }
 
   ngOnInit(): void {
   }
 
   onClick():void {
     this.showMenu = !this.showMenu;
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 
 }
