@@ -1,5 +1,5 @@
 export interface Detalle {
-  id: number;
+  id?: number;
   nombre: string;
   apellido: string;
   profesion: string;
