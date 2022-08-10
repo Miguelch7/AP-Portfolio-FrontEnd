@@ -3,8 +3,7 @@ import { faPenToSquare, faFileLines, faLocationDot, IconDefinition } from '@fort
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 import { DetalleService } from '../../services/detalle.service';
-import { Detalle } from './Detalle';
-
+import { DetalleUsuario } from '../../models/DetalleUsuario';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -13,7 +12,7 @@ import { Detalle } from './Detalle';
 })
 export class SobreMiComponent implements OnInit {
 
-  detalle!: Detalle;
+  detalleUsuario!: DetalleUsuario;
 
   faLocationDot: IconDefinition = faLocationDot;
   faFileLines: IconDefinition = faFileLines;
@@ -25,49 +24,49 @@ export class SobreMiComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.detalleService.getDetalle().subscribe((detalle: Detalle) => {
-      this.detalle = detalle;
+    this.detalleService.getDetalleUsuario().subscribe((detalleUsuario: DetalleUsuario) => {
+      this.detalleUsuario = detalleUsuario;
     });
   }
 
-  updateDetalle(detalle: Detalle): void {
+  updateDetalleUsuario(detalleUsuario: DetalleUsuario): void {
     Swal.fire({
       title: 'Actualizar Detalle',
       html: `
         <div class="form-sweet-alert">
           <div class="form-control">
             <label for="nombre">Nombre: </label>
-            <input type="text" id="nombre" class="swal2-input" placeholder="Ingrese el nombre" value="${ detalle.nombre }">
+            <input type="text" id="nombre" class="swal2-input" placeholder="Ingrese el nombre" value="${ detalleUsuario.nombre }">
           </div>
 
           <div class="form-control">
             <label for="apellido">Apellido: </label>
-            <input type="text" id="apellido" class="swal2-input" placeholder="Ingrese el apellido" value="${ detalle.apellido }">
+            <input type="text" id="apellido" class="swal2-input" placeholder="Ingrese el apellido" value="${ detalleUsuario.apellido }">
           </div>
 
           <div class="form-control">
             <label for="profesion">Profesión: </label>
-            <input type="text" id="profesion" class="swal2-input" placeholder="Ingrese una profesión" value="${ detalle.profesion }">
+            <input type="text" id="profesion" class="swal2-input" placeholder="Ingrese una profesión" value="${ detalleUsuario.profesion }">
           </div>
 
           <div class="form-control">
             <label for="descripcion">Descripción: </label>
-            <textarea id="descripcion" class="swal2-input" placeholder="Ingrese una descripcion" row="10">${ detalle.descripcion }</textarea>
+            <textarea id="descripcion" class="swal2-input" placeholder="Ingrese una descripcion" row="10">${ detalleUsuario.descripcion }</textarea>
           </div>
 
           <div class="form-control">
             <label for="imagen">URL de la imagen: </label>
-            <input type="text" id="imagen" class="swal2-input" placeholder="Ingrese la url de la imagen" value="${ detalle.imagen }">
+            <input type="text" id="imagen" class="swal2-input" placeholder="Ingrese la url de la imagen" value="${ detalleUsuario.imagen }">
           </div>
 
           <div class="form-control">
             <label for="direccion">Dirección: </label>
-            <input type="text" id="direccion" class="swal2-input" placeholder="Ingrese una dirección" value="${ detalle.direccion }">
+            <input type="text" id="direccion" class="swal2-input" placeholder="Ingrese una dirección" value="${ detalleUsuario.direccion }">
           </div>
 
           <div class="form-control">
             <label for="cv">URL del cv: </label>
-            <input type="text" id="cv" class="swal2-input" placeholder="Ingrese la url del cv" value="${ detalle.cv }">
+            <input type="text" id="cv" class="swal2-input" placeholder="Ingrese la url del cv" value="${ detalleUsuario.linkCv }">
           </div>
         </ div>
       `,
@@ -81,27 +80,27 @@ export class SobreMiComponent implements OnInit {
         const descripcion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#descripcion')).value;
         const imagen: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#imagen')).value;
         const direccion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#direccion')).value;
-        const cv: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#cv')).value;
+        const linkCv: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#cv')).value;
 
         // Validar campos
-        if (!nombre || !apellido || !descripcion || !profesion || !direccion || !cv) {
+        if (!nombre || !apellido || !descripcion || !profesion || !direccion || !linkCv) {
           Swal.showValidationMessage('Todos los campos son obligatorios');
         };
 
-        return { nombre, apellido, profesion, descripcion, imagen, direccion, cv };
+        return { nombre, apellido, profesion, descripcion, imagen, direccion, linkCv };
       }
     }).then((result) => {
       
-      const detalleActualizado: Detalle = result.value!;
+      const detalleusuarioActualizado: DetalleUsuario = result.value!;
 
-      if (detalleActualizado) {
-        this.detalleService.updateDetalle(detalleActualizado).subscribe((detalle: Detalle) => {
-          this.detalle = detalle;
+      if (detalleusuarioActualizado) {
+        this.detalleService.updateDetalleUsuario(detalleusuarioActualizado).subscribe((detalleUsuario: DetalleUsuario) => {
+          this.detalleUsuario = detalleUsuario;
         }, (error) => {
           Swal.fire('Ups!', 'Ha ocurrido un error, por favor intente nuevamente.', 'error');
         });
   
-        Swal.fire('El detalle se han actualizado correctamente.', '', 'success');
+        Swal.fire('El detalle del usuario se han actualizado correctamente.', '', 'success');
       };
     }).catch((error) => {
       Swal.fire('Ups!', 'Ha ocurrido un error, por favor intente nuevamente.', 'error');

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTrashAlt, faPenToSquare, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
-import { Proyecto } from '../proyectos/Proyecto';
+import { Proyecto } from '../../models/Proyecto';
 
 @Component({
   selector: 'app-proyectos-item',

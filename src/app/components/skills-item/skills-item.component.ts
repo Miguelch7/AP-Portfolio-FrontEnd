@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { faTrashAlt, faPenToSquare, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
-import { Skill } from '../skills/Skill';
+import { Skill } from '../../models/Skill';
 
 @Component({
   selector: 'app-skills-item',

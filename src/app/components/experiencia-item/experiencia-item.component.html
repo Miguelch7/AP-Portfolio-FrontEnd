@@ -1,17 +1,17 @@
 <article class="experiencia-item">
   <div *ngIf="authService.isLogged" class="btn-container">
-    <button class="btn-option btn-edit" title="Editar experiencia" (click)="onUpdate(experiencia)"><fa-icon [icon]="iconEdit"></fa-icon></button>
-    <button class="btn-option btn-delete" title="Eliminar experiencia" (click)="onDelete(experiencia)"><fa-icon [icon]="iconDelete"></fa-icon></button>
+    <button class="btn-option btn-edit" title="Editar trabajo" (click)="onUpdate(trabajo)"><fa-icon [icon]="iconEdit"></fa-icon></button>
+    <button class="btn-option btn-delete" title="Eliminar trabajo" (click)="onDelete(trabajo)"><fa-icon [icon]="iconDelete"></fa-icon></button>
   </div>
   <figure>
-    <img src="{{ experiencia.imagen }}" alt="Logotipo {{ experiencia.empresa }}">
+    <img src="{{ trabajo.imagen }}" alt="Logotipo {{ trabajo.empresa }}">
   </figure>
   <div class="info">
-    <h3>{{ experiencia.puesto }}</h3>
+    <h3>{{ trabajo.puesto }}</h3>
     <div class="info-empresa">
-      <h4>{{ experiencia.empresa }}</h4>
-      <p>{{ experiencia.fecha_inicio }} - {{ experiencia.fecha_fin }}</p>
+      <h4>{{ trabajo.empresa }}</h4>
+      <p>{{ trabajo.fechaInicio }} - {{ trabajo.fechaFin }}</p>
     </div>
-    <p>{{ experiencia.descripcion }}</p>
+    <p>{{ trabajo.descripcion }}</p>
   </div>
 </article>

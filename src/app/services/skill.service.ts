@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { Skill } from '../components/skills/Skill';
+import { Skill } from '../models/Skill';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class SkillService {
 
-  private apiUrl: string = environment.apiUrl + '/skills';
+  private apiUrl: string = environment.apiUrl + '/api/skills';
 
   constructor(
     private http: HttpClient
@@ -26,21 +26,12 @@ export class SkillService {
     return this.http.get<Skill[]>(this.apiUrl);
   }
 
-  addSkill(skill: Skill): Observable<Skill> {
+  createSkill(skill: Skill): Observable<Skill> {
     return this.http.post<Skill>(this.apiUrl, skill, httpOptions);
   }
 
   updateSkill(skill: Skill): Observable<Skill> {
-    
-    const { id, nombre, descripcion, imagen, porcentaje } = skill;
-
-    const params = new HttpParams()
-      .set('nombre', nombre)
-      .set('descripcion', descripcion)
-      .set('imagen', imagen)
-      .set('porcentaje', porcentaje);
-
-    return this.http.put<Skill>(`${ this.apiUrl }/${ id }`, null, { ...httpOptions, params });
+    return this.http.put<Skill>(`${ this.apiUrl }/${ skill.id }`, skill, httpOptions);
   }
 
   deleteSkill(skill: Skill): Observable<number> {

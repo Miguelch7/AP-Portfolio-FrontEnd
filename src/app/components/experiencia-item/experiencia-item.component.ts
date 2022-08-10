@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Experiencia } from '../experiencia/Experiencia';
 import { faTrashAlt, faPenToSquare, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
+import { Trabajo } from '../../models/Trabajo';
 
 @Component({
   selector: 'app-experiencia-item',
@@ -10,9 +10,9 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ExperienciaItemComponent implements OnInit {
 
-  @Input() experiencia!: Experiencia;
-  @Output() onUpdateExperiencia: EventEmitter<Experiencia> = new EventEmitter<Experiencia>();
-  @Output() onDeleteExperiencia: EventEmitter<Experiencia> = new EventEmitter<Experiencia>();
+  @Input() trabajo!: Trabajo;
+  @Output() onUpdateTrabajo: EventEmitter<Trabajo> = new EventEmitter<Trabajo>();
+  @Output() onDeleteTrabajo: EventEmitter<Trabajo> = new EventEmitter<Trabajo>();
   iconEdit: IconDefinition = faPenToSquare;
   iconDelete: IconDefinition = faTrashAlt;
 
@@ -23,11 +23,11 @@ export class ExperienciaItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onUpdate(experiencia: Experiencia): void {
-    this.onUpdateExperiencia.emit(experiencia);
+  onUpdate(trabajo: Trabajo): void {
+    this.onUpdateTrabajo.emit(trabajo);
   }
 
-  onDelete(experiencia: Experiencia): void {
-    this.onDeleteExperiencia.emit(experiencia);
+  onDelete(trabajo: Trabajo): void {
+    this.onDeleteTrabajo.emit(trabajo);
   }
 }

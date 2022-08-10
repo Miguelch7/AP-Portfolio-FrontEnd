@@ -1,7 +1,7 @@
 <section id="skills">
   <div class="title-container">
     <h2 class="title">Hard & Soft-Skills</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar experiencia" (click)="addSkill()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar experiencia" (click)="createSkill()"><fa-icon [icon]="iconAdd"></fa-icon></button>
   </div>
 
   <app-skills-item

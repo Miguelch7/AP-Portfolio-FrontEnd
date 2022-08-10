@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Educacion } from '../educacion/Educacion';
 import { IconDefinition, faPenToSquare, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
+import { Estudio } from '../../models/Estudio';
 
 @Component({
   selector: 'app-educacion-item',
@@ -10,9 +10,9 @@ import { AuthService } from '../../services/auth.service';
 })
 export class EducacionItemComponent implements OnInit {
 
-  @Input() educacion!: Educacion;
-  @Output() onUpdateEducacion: EventEmitter<Educacion> = new EventEmitter<Educacion>();
-  @Output() onDeleteEducacion: EventEmitter<Educacion> = new EventEmitter<Educacion>();
+  @Input() estudio!: Estudio;
+  @Output() onUpdateEstudio: EventEmitter<Estudio> = new EventEmitter<Estudio>();
+  @Output() onDeleteEstudio: EventEmitter<Estudio> = new EventEmitter<Estudio>();
   iconEdit: IconDefinition = faPenToSquare;
   iconDelete: IconDefinition = faTrashAlt;
 
@@ -23,11 +23,11 @@ export class EducacionItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onUpdate(educacion: Educacion): void {
-    this.onUpdateEducacion.emit(educacion);
+  onUpdate(estudio: Estudio): void {
+    this.onUpdateEstudio.emit(estudio);
   }
 
-  onDelete(educacion: Educacion): void {
-    this.onDeleteEducacion.emit(educacion);
+  onDelete(estudio: Estudio): void {
+    this.onDeleteEstudio.emit(estudio);
   }
 }

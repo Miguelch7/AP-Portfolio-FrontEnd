@@ -3,7 +3,7 @@ import { faCirclePlus, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 import { ProyectoService } from '../../services/proyecto.service';
-import { Proyecto } from './Proyecto';
+import { Proyecto } from '../../models/Proyecto';
 
 @Component({
   selector: 'app-proyectos',
@@ -26,7 +26,7 @@ export class ProyectosComponent implements OnInit {
     })
   }
 
-  addProyecto(): void {
+  createProyecto(): void {
     Swal.fire({
       title: 'Añadir Proyecto',
       html: `
@@ -64,22 +64,22 @@ export class ProyectosComponent implements OnInit {
         const nombre: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#nombre')).value;
         const descripcion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#descripcion')).value;
         const imagen: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#imagen')).value;
-        const link_proyecto: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_proyecto')).value;
-        const link_repositorio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_repositorio')).value;
+        const linkProyecto: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_proyecto')).value;
+        const linkRepositorio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_repositorio')).value;
 
         // Validar campos
-        if (!nombre || !descripcion || !imagen || !link_proyecto || !link_repositorio) {
+        if (!nombre || !descripcion || !imagen || !linkProyecto || !linkRepositorio) {
           Swal.showValidationMessage('Todos los campos son obligatorios');
         };
 
-        return { nombre, descripcion, imagen, link_proyecto, link_repositorio };
+        return { nombre, descripcion, imagen, linkProyecto, linkRepositorio };
       }
     }).then((result) => {
       
       const proyecto: Proyecto = result.value!;
 
       if (proyecto) {
-        this.proyectoService.addProyecto(proyecto).subscribe((proyecto: Proyecto) => {
+        this.proyectoService.createProyecto(proyecto).subscribe((proyecto: Proyecto) => {
           this.proyectos.push(proyecto);
           Swal.fire('El proyecto se ha creado correctamente.', '', 'success');
         }, (error) => {
@@ -114,12 +114,12 @@ export class ProyectosComponent implements OnInit {
 
           <div class="form-control">
             <label for="link_proyecto">Link del proyecto: </label>
-            <input type="text" id="link_proyecto" class="swal2-input" placeholder="Ingrese el link del proyecto" value="${ proyecto.link_proyecto }">
+            <input type="text" id="link_proyecto" class="swal2-input" placeholder="Ingrese el link del proyecto" value="${ proyecto.linkProyecto }">
           </div>
 
           <div class="form-control">
             <label for="link_repositorio">Link del repositorio: </label>
-            <input type="text" id="link_repositorio" class="swal2-input" placeholder="Ingrese el link del repositorio" value="${ proyecto.link_repositorio }">
+            <input type="text" id="link_repositorio" class="swal2-input" placeholder="Ingrese el link del repositorio" value="${ proyecto.linkRepositorio }">
           </div>
         </ div>
       `,
@@ -130,15 +130,15 @@ export class ProyectosComponent implements OnInit {
         const nombre: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#nombre')).value;
         const descripcion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#descripcion')).value;
         const imagen: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#imagen')).value;
-        const link_proyecto: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_proyecto')).value;
-        const link_repositorio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_repositorio')).value;
+        const linkProyecto: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_proyecto')).value;
+        const linkRepositorio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#link_repositorio')).value;
 
         // Validar campos
-        if (!nombre || !descripcion || !imagen || !link_proyecto || !link_repositorio) {
+        if (!nombre || !descripcion || !imagen || !linkProyecto || !linkRepositorio) {
           Swal.showValidationMessage('Todos los campos son obligatorios');
         };
 
-        return { ...proyecto, nombre, descripcion, imagen, link_proyecto, link_repositorio };
+        return { ...proyecto, nombre, descripcion, imagen, linkProyecto, linkRepositorio };
       }
     }).then((result) => {
       

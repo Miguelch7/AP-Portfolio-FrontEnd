@@ -1,19 +1,19 @@
 <section id="sobre-mi">
   <figure>
-    <img src="{{ detalle && detalle.imagen }}" alt="Mi foto">
+    <img src="{{ detalleUsuario && detalleUsuario.imagen }}" alt="Mi foto">
     <figcaption>
-      <h4>{{ detalle && detalle.profesion }}</h4>
-      <fa-icon [icon]="faLocationDot"></fa-icon> {{ detalle && detalle.direccion }}
+      <h4>{{ detalleUsuario && detalleUsuario.profesion }}</h4>
+      <fa-icon [icon]="faLocationDot"></fa-icon> {{ detalleUsuario && detalleUsuario.direccion }}
     </figcaption>
   </figure>
   <div>
     <div class="title-container">
       <h2 class="title">Sobre mí</h2>
-      <button *ngIf="authService.isLogged" class="btn-option btn-edit" title="Editar detalles" (click)="updateDetalle(detalle)"><fa-icon [icon]="iconEdit"></fa-icon></button>
+      <button *ngIf="authService.isLogged" class="btn-option btn-edit" title="Editar detalle del usuario" (click)="updateDetalleUsuario(detalleUsuario)"><fa-icon [icon]="iconEdit"></fa-icon></button>
     </div>
 
-    <p>{{ detalle && detalle.descripcion }}</p>
+    <p>{{ detalleUsuario && detalleUsuario.descripcion }}</p>
     
-    <button class="btn"><a target="_blank" href="{{ detalle && detalle.cv }}" download="MiCV.pdf"><fa-icon [icon]="faFileLines"></fa-icon> Descargar CV</a></button>
+    <button class="btn"><a target="_blank" href="{{ detalleUsuario && detalleUsuario.linkCv }}" download="MiCV.pdf"><fa-icon [icon]="faFileLines"></fa-icon> Descargar CV</a></button>
   </div>
 </section>

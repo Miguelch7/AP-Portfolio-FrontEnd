@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.detalleService.getDetalle().subscribe(({ nombre, apellido, profesion }) => {      
+    this.detalleService.getDetalleUsuario().subscribe(({ nombre, apellido, profesion }) => {      
       this.nombre = nombre.toUpperCase();
       this.apellido = apellido.toUpperCase();
       this.profesion = profesion;
