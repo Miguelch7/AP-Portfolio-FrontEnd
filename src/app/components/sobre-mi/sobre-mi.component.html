@@ -1,4 +1,4 @@
-<section id="sobre-mi">
+<section id="sobre-mi" *ngIf="detalleUsuario">
   <figure>
     <img src="{{ detalleUsuario && detalleUsuario.imagen }}" alt="Mi foto">
     <figcaption>

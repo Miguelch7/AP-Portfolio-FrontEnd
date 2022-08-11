@@ -1,4 +1,4 @@
-<section id="experiencia">
+<section id="experiencia" *ngIf="trabajos[0]">
   <div class="title-container">
     <h2 class="title">Experiencia</h2>
     <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar trabajo" (click)="createTrabajo()"><fa-icon [icon]="iconAdd"></fa-icon></button>
