@@ -17,6 +17,6 @@
     <li class="menu-item"><a href="#proyectos" class="enlace" alt="Conoce sobre mis proyectos" title="Ir a Proyectos">Proyectos</a></li>
     <li class="menu-item"><a href="#contactame" class="enlace" alt="Contáctame" title="Ir a Contáctame">Contáctame</a></li>
     <li *ngIf="!authService.isLogged" class="menu-item"><a href="/login" id="btn-login" class="btn" alt="Iniciar sesión" title="Login">Login</a></li>
-    <li *ngIf="authService.isLogged" class="menu-item"><a href="" id="btn-logout" class="btn" alt="Cerrar sesión" title="Logout" (click)="logout()">Logout</a></li>
+    <li *ngIf="authService.isLogged" class="menu-item"><a href="#" id="btn-logout" class="btn" alt="Cerrar sesión" title="Logout" (click)="logout()">Logout</a></li>
   </ul>
 </nav>

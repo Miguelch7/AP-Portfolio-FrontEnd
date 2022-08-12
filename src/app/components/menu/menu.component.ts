@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IconDefinition, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menu',
@@ -25,7 +26,26 @@ export class MenuComponent implements OnInit {
   }
 
   logout(): void {
-    this.authService.logout();
+    Swal.fire({
+      text: "¿Estás seguro que deseas cerrar sesión?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, cerrar sesión'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Cierre de sesión éxitoso',
+          showConfirmButton: false,
+          timer: 2000
+        });
+
+        this.authService.logout();
+      };
+    });
   }
 
 }
