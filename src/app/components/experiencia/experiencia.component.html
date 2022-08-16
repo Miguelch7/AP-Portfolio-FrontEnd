@@ -1,14 +1,14 @@
-<section id="experiencia">
+<section id="experiencia" *ngIf="trabajos[0]">
   <div class="title-container">
     <h2 class="title">Experiencia</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar experiencia" (click)="addExperiencia()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar trabajo" (click)="createTrabajo()"><fa-icon [icon]="iconAdd"></fa-icon></button>
   </div>
 
-  <article *ngFor="let experiencia of experiencias">
+  <article *ngFor="let trabajo of trabajos">
     <app-experiencia-item
-      [experiencia]="experiencia"
-      (onUpdateExperiencia)="updateExperiencia(experiencia)"
-      (onDeleteExperiencia)="deleteExperiencia(experiencia)"
+      [trabajo]="trabajo"
+      (onUpdateTrabajo)="updateTrabajo(trabajo)"
+      (onDeleteTrabajo)="deleteTrabajo(trabajo)"
     ></app-experiencia-item>
   </article>
 </section>

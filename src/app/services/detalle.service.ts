@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { Detalle } from '../components/sobre-mi/Detalle';
+import { DetalleUsuario } from '../models/DetalleUsuario';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,29 +16,17 @@ const httpOptions = {
 })
 export class DetalleService {
 
-  private apiUrl: string = environment.apiUrl + '/usuarios/1/detalle';
+  private apiUrl: string = environment.apiUrl + '/api/usuarios/1/detalle';
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getDetalle(): Observable<Detalle> {
-    return this.http.get<Detalle>(this.apiUrl);
+  getDetalleUsuario(): Observable<DetalleUsuario> {
+    return this.http.get<DetalleUsuario>(this.apiUrl);
   }
 
-  updateDetalle(detalle: Detalle): Observable<Detalle> {
-    
-    const { nombre, apellido, profesion, descripcion, imagen, direccion, cv } = detalle;
-
-    const params = new HttpParams()
-      .set('nombre', nombre)
-      .set('apellido', apellido)
-      .set('profesion', profesion)
-      .set('descripcion', descripcion)
-      .set('imagen', imagen)
-      .set('direccion', direccion)
-      .set('cv', cv);
-
-    return this.http.put<Detalle>(this.apiUrl, null, { ...httpOptions, params });
+  updateDetalleUsuario(detalleUsuario: DetalleUsuario): Observable<DetalleUsuario> {
+    return this.http.put<DetalleUsuario>(this.apiUrl, detalleUsuario, httpOptions);
   }
 }

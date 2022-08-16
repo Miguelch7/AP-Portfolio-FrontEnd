@@ -1,7 +1,7 @@
-<section id="proyectos">
+<section id="proyectos" *ngIf="proyectos[0]">
   <div class="title-container">
     <h2 class="title">Proyectos</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar proyecto" (click)="addProyecto()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar proyecto" (click)="createProyecto()"><fa-icon [icon]="iconAdd"></fa-icon></button>
   </div>
   
   <app-proyectos-item

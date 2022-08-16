@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { Proyecto } from '../components/proyectos/Proyecto';
+import { Proyecto } from '../models/Proyecto';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class ProyectoService {
 
-  private apiUrl: string = environment.apiUrl + '/proyectos';
+  private apiUrl: string = environment.apiUrl + '/api/proyectos';
 
   constructor(
     private http: HttpClient
@@ -26,22 +26,12 @@ export class ProyectoService {
     return this.http.get<Proyecto[]>(this.apiUrl);
   }
 
-  addProyecto(proyecto: Proyecto): Observable<Proyecto> {
+  createProyecto(proyecto: Proyecto): Observable<Proyecto> {
     return this.http.post<Proyecto>(this.apiUrl, proyecto, httpOptions);
   }
 
   updateProyecto(proyecto: Proyecto): Observable<Proyecto> {
-    
-    const { id, nombre, descripcion, imagen, link_proyecto, link_repositorio } = proyecto;
-
-    const params = new HttpParams()
-      .set('nombre', nombre)
-      .set('descripcion', descripcion)
-      .set('imagen', imagen)
-      .set('link_proyecto', link_proyecto)
-      .set('link_repositorio', link_repositorio);
-
-    return this.http.put<Proyecto>(`${ this.apiUrl }/${ id }`, null, { ...httpOptions, params });
+    return this.http.put<Proyecto>(`${ this.apiUrl }/${ proyecto.id }`, proyecto, httpOptions);
   }
 
   deleteProyecto(proyecto: Proyecto): Observable<number> {

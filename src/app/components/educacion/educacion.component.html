@@ -1,14 +1,14 @@
-<section id="educacion">
+<section id="educacion" *ngIf="listadoEstudios[0]">
   <div class="title-container">
     <h2 class="title">Educacion</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar educacion" (click)="addEducacion()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar estudio" (click)="createEstudio()"><fa-icon [icon]="iconAdd"></fa-icon></button>
   </div>
   
-  <article *ngFor="let educacion of listadoEducacion">
+  <article *ngFor="let estudio of listadoEstudios">
     <app-educacion-item
-      [educacion]="educacion"
-      (onUpdateEducacion)="updateEducacion(educacion)"
-      (onDeleteEducacion)="deleteEducacion(educacion)"
+      [estudio]="estudio"
+      (onUpdateEstudio)="updateEstudio(estudio)"
+      (onDeleteEstudio)="deleteEstudio(estudio)"
     ></app-educacion-item>
   </article>
 </section>

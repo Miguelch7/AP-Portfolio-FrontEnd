@@ -1,17 +1,17 @@
 <footer id="contactame">
   <h2>Contáctame</h2>
-  <form>
+  <form (ngSubmit)="onSubmit()">
     <div class="form-control">
       <fa-icon [icon]="faUser"></fa-icon>
-      <input type="text" placeholder="Nombre">
+      <input [(ngModel)]="nombre" id="nombre" name="nombre" type="text" placeholder="Nombre">
     </div>
     <div class="form-control">
       <fa-icon [icon]="faAt"></fa-icon>
-      <input type="text" placeholder="Email">
+      <input [(ngModel)]="email" id="email" name="email" type="email" placeholder="Email">
     </div>
     <div class="form-control">
       <fa-icon [icon]="faEnvelope"></fa-icon>
-      <textarea name="mensaje" id="mensaje" rows="10" placeholder="Mensaje"></textarea>
+      <textarea [(ngModel)]="mensaje" name="mensaje" id="mensaje" rows="10" placeholder="Mensaje"></textarea>
     </div>
     <input class="btn" type="submit" value="Enviar Mensaje">
   </form>

@@ -1,4 +1,4 @@
-export interface Detalle {
+export interface DetalleUsuario {
   id?: number;
   nombre: string;
   apellido: string;
@@ -6,5 +6,5 @@ export interface Detalle {
   descripcion: string;
   imagen: string;
   direccion: string;
-  cv: string;
+  linkCv: string;
 }

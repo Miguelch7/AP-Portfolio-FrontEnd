@@ -3,6 +3,6 @@ export interface Proyecto {
   nombre: string;
   descripcion: string;
   imagen: string;
-  link_proyecto: string;
-  link_repositorio: string;
+  linkProyecto: string;
+  linkRepositorio: string;
 }

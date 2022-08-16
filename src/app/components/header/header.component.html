@@ -1,8 +1,8 @@
 <header>
   <app-menu></app-menu>
   <section id="banner">
-    <h1>{{ nombre + ' ' + apellido }}</h1>
-    <h3>{{ profesion }}</h3>
+    <h1 *ngIf="nombre && apellido">{{ nombre + ' ' + apellido }}</h1>
+    <h3 *ngIf="profesion">{{ profesion }}</h3>
 
     <ngx-typed-js [strings]="mensajes" [typeSpeed]="55" [backSpeed]="25" [loop]="true">
       <h4>

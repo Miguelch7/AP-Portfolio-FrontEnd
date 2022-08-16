@@ -3,7 +3,7 @@ import { faCirclePlus, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 import { EducacionService } from '../../services/educacion.service';
-import { Educacion } from './Educacion';
+import { Estudio } from '../../models/Estudio';
 
 @Component({
   selector: 'app-educacion',
@@ -12,7 +12,7 @@ import { Educacion } from './Educacion';
 })
 export class EducacionComponent implements OnInit {
 
-  listadoEducacion: Educacion[] = [];
+  listadoEstudios: Estudio[] = [];
   iconAdd: IconDefinition = faCirclePlus;
 
   constructor(
@@ -21,14 +21,14 @@ export class EducacionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.educacionService.getEstudios().subscribe((estudios: Educacion[]) => {
-      this.listadoEducacion = estudios;
+    this.educacionService.getEstudios().subscribe((estudios: Estudio[]) => {
+      this.listadoEstudios = estudios;
     });
   }
 
-  addEducacion(): void {
+  createEstudio(): void {
     Swal.fire({
-      title: 'Añadir Educación',
+      title: 'Añadir Estudio',
       html: `
         <div class="form-sweet-alert">
           <div class="form-control">
@@ -63,30 +63,30 @@ export class EducacionComponent implements OnInit {
         </ div>
       `,
       width: '60%',
-      confirmButtonText: 'Guardar educación',
+      confirmButtonText: 'Guardar estudio',
       focusConfirm: false,
       preConfirm: () => {
         const titulo: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#titulo')).value;
         const institucion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#institucion')).value;
         const descripcion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#descripcion')).value;
         const imagen: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#imagen')).value;
-        const fecha_inicio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_inicio')).value;
-        const fecha_fin: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_fin')).value;
+        const fechaInicio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_inicio')).value;
+        const fechaFin: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_fin')).value;
 
         // Validar campos
-        if (!titulo || !institucion || !descripcion || !fecha_inicio || !fecha_fin) {
+        if (!titulo || !institucion || !descripcion || !fechaInicio || !fechaFin) {
           Swal.showValidationMessage('Todos los campos son obligatorios');
         };
 
-        return { titulo, institucion, descripcion, imagen, fecha_inicio, fecha_fin };
+        return { titulo, institucion, descripcion, imagen, fechaInicio, fechaFin };
       }
     }).then((result) => {
       
-      const educacion: Educacion = result.value!;
+      const estudio: Estudio = result.value!;
 
-      if (educacion) {
-        this.educacionService.addEstudio(educacion).subscribe((educacion: Educacion) => {
-          this.listadoEducacion.push(educacion);
+      if (estudio) {
+        this.educacionService.createEstudio(estudio).subscribe((estudio: Estudio) => {
+          this.listadoEstudios.push(estudio);
         });
   
         Swal.fire('El estudio se ha creado correctamente.', '', 'success');
@@ -96,67 +96,67 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  updateEducacion(educacion: Educacion) {
+  updateEstudio(estudio: Estudio) {
     Swal.fire({
-      title: 'Actualizar Educación',
+      title: 'Actualizar Estudio',
       html: `
         <div class="form-sweet-alert">
           <div class="form-control">
             <label for="titulo">Título: </label>
-            <input type="text" id="titulo" class="swal2-input" placeholder="Ingrese el nombre del titulo" value="${ educacion.titulo }">
+            <input type="text" id="titulo" class="swal2-input" placeholder="Ingrese el nombre del titulo" value="${ estudio.titulo }">
           </div>
 
           <div class="form-control">
             <label for="institucion">Institución: </label>
-            <input type="text" id="institucion" class="swal2-input" placeholder="Ingrese el nombre de la institución" value="${ educacion.institucion }">
+            <input type="text" id="institucion" class="swal2-input" placeholder="Ingrese el nombre de la institución" value="${ estudio.institucion }">
           </div>
 
           <div class="form-control">
             <label for="descripcion">Descripción: </label>
-            <textarea id="descripcion" class="swal2-input" placeholder="Ingrese una descripcion" row="10">${ educacion.descripcion }</textarea>
+            <textarea id="descripcion" class="swal2-input" placeholder="Ingrese una descripcion" row="10">${ estudio.descripcion }</textarea>
           </div>
 
           <div class="form-control">
             <label for="imagen">URL de la imagen: </label>
-            <input type="text" id="imagen" class="swal2-input" placeholder="Ingrese la url de la imagen" value="${ educacion.imagen }">
+            <input type="text" id="imagen" class="swal2-input" placeholder="Ingrese la url de la imagen" value="${ estudio.imagen }">
           </div>
 
           <div class="form-control">
             <label for="fecha_inicio">Fecha de inicio: </label>
-            <input type="text" id="fecha_inicio" class="swal2-input" placeholder="Ingrese una fecha" value="${ educacion.fecha_inicio }">
+            <input type="text" id="fecha_inicio" class="swal2-input" placeholder="Ingrese una fecha" value="${ estudio.fechaInicio }">
           </div>
 
           <div class="form-control">
             <label for="fecha_fin">Fecha de finalización: </label>
-            <input type="text" id="fecha_fin" class="swal2-input" placeholder="Ingrese una fecha" value="${ educacion.fecha_fin }">
+            <input type="text" id="fecha_fin" class="swal2-input" placeholder="Ingrese una fecha" value="${ estudio.fechaFin }">
           </div>
         </ div>
       `,
       width: '60%',
-      confirmButtonText: 'Actualizar educación',
+      confirmButtonText: 'Actualizar estudio',
       focusConfirm: false,
       preConfirm: () => {
         const titulo: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#titulo')).value;
         const institucion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#institucion')).value;
         const descripcion: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#descripcion')).value;
         const imagen: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#imagen')).value;
-        const fecha_inicio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_inicio')).value;
-        const fecha_fin: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_fin')).value;
+        const fechaInicio: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_inicio')).value;
+        const fechaFin: string = (<HTMLInputElement> Swal.getPopup()?.querySelector('#fecha_fin')).value;
 
         // Validar campos
-        if (!titulo || !institucion || !descripcion || !fecha_inicio || !fecha_fin) {
+        if (!titulo || !institucion || !descripcion || !fechaInicio || !fechaFin) {
           Swal.showValidationMessage('Todos los campos son obligatorios');
         };
 
-        return { ...educacion, titulo, institucion, descripcion, imagen, fecha_inicio, fecha_fin };
+        return { ...estudio, titulo, institucion, descripcion, imagen, fechaInicio, fechaFin };
       }
     }).then((result) => {
       
-      const educacion: Educacion = result.value!;
+      const estudio: Estudio = result.value!;
 
-      if (educacion) {
-        this.educacionService.updateEstudio(educacion).subscribe((educacion: Educacion) => {
-          this.listadoEducacion = this.listadoEducacion.map(e => e.id === educacion.id ? e = educacion : e);
+      if (estudio) {
+        this.educacionService.updateEstudio(estudio).subscribe((estudio: Estudio) => {
+          this.listadoEstudios = this.listadoEstudios.map(e => e.id === estudio.id ? e = estudio : e);
         });
   
         Swal.fire('El estudio se ha actualizado correctamente.', '', 'success');
@@ -166,7 +166,7 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  deleteEducacion(educacion: Educacion) {
+  deleteEstudio(estudio: Estudio) {
     Swal.fire({
       title: 'Estás seguro que deseas eliminar este estudio?',
       icon: 'warning',
@@ -177,9 +177,9 @@ export class EducacionComponent implements OnInit {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.educacionService.deleteEstudio(educacion).subscribe((id: number) => {
+        this.educacionService.deleteEstudio(estudio).subscribe((id: number) => {
           Swal.fire('El estudio se ha eliminado correctamente.', '', 'success');
-          this.listadoEducacion = this.listadoEducacion.filter(e => e.id !== id);
+          this.listadoEstudios = this.listadoEstudios.filter(e => e.id !== id);
         })
       }
     })

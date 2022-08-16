@@ -3,7 +3,7 @@ import { faCirclePlus, IconDefinition } from '@fortawesome/free-solid-svg-icons'
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
 import { SkillService } from '../../services/skill.service';
-import { Skill } from './Skill';
+import { Skill } from '../../models/Skill';
 
 @Component({
   selector: 'app-skills',
@@ -26,7 +26,7 @@ export class SkillsComponent implements OnInit {
     });
   }
 
-  addSkill(): void {
+  createSkill(): void {
     Swal.fire({
       title: 'Añadir Skill',
       html: `
@@ -75,7 +75,7 @@ export class SkillsComponent implements OnInit {
       const skill: Skill = result.value!;
 
       if (skill) {
-        this.skillService.addSkill(skill).subscribe((skill: Skill) => {
+        this.skillService.createSkill(skill).subscribe((skill: Skill) => {
           this.skills.push(skill);
         });
   
