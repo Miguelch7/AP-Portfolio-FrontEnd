@@ -73,7 +73,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 25%;
   margin: 2rem 0;
 }
 
@@ -107,7 +107,7 @@
   }
 
   #redes {
-    width: 70%;
+    width: 50%;
   }
 
   #redes a {
