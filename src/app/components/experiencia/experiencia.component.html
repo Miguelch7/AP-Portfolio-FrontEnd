@@ -1,13 +1,24 @@
 <section id="experiencia" *ngIf="trabajos[0]">
   <div class="title-container">
     <h2 class="title">Experiencia</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar trabajo" (click)="createTrabajo()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar trabajo" (click)="toogleAddExperiencia()"><fa-icon [icon]="iconAdd"></fa-icon></button>
   </div>
+
+  <app-add-experiencia
+    *ngIf="showAddExperiencia"
+    (onAddExperiencia)="addTrabajo($event)"
+  ></app-add-experiencia>
+
+  <app-update-experiencia
+    *ngIf="showUpdateExperiencia"
+    [trabajo]="trabajoSeleccionado"
+    (onUpdateExperiencia)="updateTrabajo($event)"
+  ></app-update-experiencia>
 
   <article *ngFor="let trabajo of trabajos">
     <app-experiencia-item
       [trabajo]="trabajo"
-      (onUpdateTrabajo)="updateTrabajo(trabajo)"
+      (onUpdateTrabajo)="toogleUpdateExperiencia(trabajo)"
       (onDeleteTrabajo)="deleteTrabajo(trabajo)"
     ></app-experiencia-item>
   </article>
