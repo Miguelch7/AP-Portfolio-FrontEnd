@@ -27,6 +27,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddExperienciaComponent } from './components/add-experiencia/add-experiencia.component';
 import { UpdateExperienciaComponent } from './components/update-experiencia/update-experiencia.component';
+import { AddEducacionComponent } from './components/add-educacion/add-educacion.component';
+import { UpdateEducacionComponent } from './components/update-educacion/update-educacion.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -51,7 +53,9 @@ const appRoutes: Routes = [
     FooterComponent,
     LoginComponent,
     AddExperienciaComponent,
-    UpdateExperienciaComponent
+    UpdateExperienciaComponent,
+    AddEducacionComponent,
+    UpdateEducacionComponent
   ],
   imports: [
     BrowserModule,
