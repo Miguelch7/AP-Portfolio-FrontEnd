@@ -31,6 +31,8 @@ import { AddEducacionComponent } from './components/add-educacion/add-educacion.
 import { UpdateEducacionComponent } from './components/update-educacion/update-educacion.component';
 import { AddSkillComponent } from './components/add-skill/add-skill.component';
 import { UpdateSkillComponent } from './components/update-skill/update-skill.component';
+import { AddProyectosComponent } from './components/add-proyectos/add-proyectos.component';
+import { UpdateProyectosComponent } from './components/update-proyectos/update-proyectos.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -59,7 +61,9 @@ const appRoutes: Routes = [
     AddEducacionComponent,
     UpdateEducacionComponent,
     AddSkillComponent,
-    UpdateSkillComponent
+    UpdateSkillComponent,
+    AddProyectosComponent,
+    UpdateProyectosComponent
   ],
   imports: [
     BrowserModule,

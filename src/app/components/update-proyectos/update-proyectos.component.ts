@@ -1,17 +1,17 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { Trabajo } from '../../models/Trabajo';
+import { Proyecto } from '../../models/Proyecto';
 import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-update-experiencia',
-  templateUrl: './update-experiencia.component.html',
-  styleUrls: ['./update-experiencia.component.css']
+  selector: 'app-update-proyectos',
+  templateUrl: './update-proyectos.component.html',
+  styleUrls: ['./update-proyectos.component.css']
 })
-export class UpdateExperienciaComponent implements OnInit {
+export class UpdateProyectosComponent implements OnInit {
 
-  @Output() onUpdateExperiencia: EventEmitter<Trabajo> = new EventEmitter<Trabajo>();
-  @Input() trabajo!: Trabajo;
+  @Output() onUpdateProyecto: EventEmitter<Proyecto> = new EventEmitter<Proyecto>();
+  @Input() proyecto!: Proyecto;
 
   file: any = null;
 
@@ -24,22 +24,22 @@ export class UpdateExperienciaComponent implements OnInit {
 
   onSubmit(): void {  
 
-    if (!this.trabajo.puesto.trim() || !this.trabajo.empresa.trim() || !this.trabajo.descripcion.trim() || !this.trabajo.fechaInicio.trim() || !this.trabajo.fechaFin.trim()) {
+    if (!this.proyecto.nombre.trim() || !this.proyecto.descripcion.trim() || !this.proyecto.linkProyecto.trim() || !this.proyecto.linkRepositorio.trim()) {
       Swal.fire('Hubo un error!', 'Todos los campos son obligatorios', 'error');
       return;
     };
 
-    const { id, puesto, empresa, descripcion, imagen, fechaInicio, fechaFin } = this.trabajo;
-    const nuevaExperiencia = { id, puesto, empresa, descripcion, imagen, fechaInicio, fechaFin };
+    const { id, nombre, descripcion, imagen, linkProyecto, linkRepositorio } = this.proyecto;
+    const nuevoProyecto = { id, nombre, descripcion, imagen, linkProyecto, linkRepositorio };
 
     if (this.file) {
       const imgRef = ref(this.storage, `images/${this.file.name}`);
 
       uploadBytes(imgRef, this.file).then(res => {
         getDownloadURL(res.ref).then(url => {
-          nuevaExperiencia.imagen = url;
+          nuevoProyecto.imagen = url;
         }).then(() => {
-          this.onUpdateExperiencia.emit(nuevaExperiencia);
+          this.onUpdateProyecto.emit(nuevoProyecto);
         }).catch(error => {
           Swal.fire('Advertencia!', 'No se pudo subir la imagen', 'warning');
         });
@@ -47,7 +47,7 @@ export class UpdateExperienciaComponent implements OnInit {
         Swal.fire('Hubo un error!', 'Ha ocurrido un error', 'error');
       });
     } else {
-      this.onUpdateExperiencia.emit(nuevaExperiencia);
+      this.onUpdateProyecto.emit(nuevoProyecto);
     };
     
     this.file = null;

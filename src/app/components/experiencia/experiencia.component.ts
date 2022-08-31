@@ -45,6 +45,8 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.createTrabajo(trabajo).subscribe((trabajo: Trabajo) => {
       this.trabajos.push(trabajo);
     });
+
+    Swal.fire('El trabajo se ha creado correctamente.', '', 'success');
   }
 
   updateTrabajo(trabajo: Trabajo): void {
@@ -52,6 +54,8 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.updateTrabajo(trabajo).subscribe((trabajo: Trabajo) => {
       this.trabajos = this.trabajos.map(t => t.id === trabajo.id ? t = trabajo : t);
     });
+
+    Swal.fire('El trabajo se ha actualizado correctamente.', '', 'success');
   }
 
   deleteTrabajo(trabajo: Trabajo): void {

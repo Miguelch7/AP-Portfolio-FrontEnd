@@ -1,13 +1,26 @@
 <section id="proyectos" *ngIf="proyectos[0]">
   <div class="title-container">
     <h2 class="title">Proyectos</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar proyecto" (click)="createProyecto()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar proyecto" (click)="toogleAddProyecto()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+  </div>
+
+  <div class="contenedor">
+    <app-add-proyectos
+      *ngIf="showAddProyecto"
+      (onAddProyecto)="addProyecto($event)"
+    ></app-add-proyectos>
+  
+    <app-update-proyectos
+      *ngIf="showUpdateProyecto"
+      [proyecto]="proyectoSeleccionado"
+      (onUpdateProyecto)="updateProyecto($event)"
+    ></app-update-proyectos>
   </div>
   
   <app-proyectos-item
     *ngFor="let proyecto of proyectos"
     [proyecto]="proyecto"
-    (onUpdateProyecto)="updateProyecto(proyecto)"
+    (onUpdateProyecto)="toogleUpdateProyecto(proyecto)"
     (onDeleteProyecto)="deleteProyecto(proyecto)"
   ></app-proyectos-item>
 </section>
