@@ -1,0 +1,39 @@
+<form 
+  class="form"
+  (ngSubmit)="onSubmit()"
+>
+  
+  <h2>Editar Experiencia</h2>
+
+  <div class="form-control">
+    <label for="puesto">Puesto: </label>
+    <input [(ngModel)]="trabajo.puesto" type="text" id="puesto" name="puesto" placeholder="Ingrese el nombre del puesto">
+  </div>
+
+  <div class="form-control">
+    <label for="empresa">Empresa: </label>
+    <input [(ngModel)]="trabajo.empresa" type="text" id="empresa" name="empresa" placeholder="Ingrese el nombre de la empresa">
+  </div>
+
+  <div class="form-control">
+    <label for="descripcion">Descripción: </label>
+    <textarea [(ngModel)]="trabajo.descripcion" id="descripcion" name="descripcion" placeholder="Ingrese una descripcion" row="10"></textarea>
+  </div>
+
+  <div class="form-control">
+    <label for="imagen">URL de la imagen: </label>
+    <input (change)="capturarArchivo($event)" type="file" id="imagen" name="imagen" placeholder="Ingrese la url de la imagen">
+  </div>
+
+  <div class="form-control">
+    <label for="fecha_inicio">Fecha de inicio: </label>
+    <input [(ngModel)]="trabajo.fechaInicio" type="text" id="fecha_inicio" name="fecha_inicio" placeholder="Ingrese una fecha">
+  </div>
+
+  <div class="form-control">
+    <label for="fecha_fin">Fecha de finalización: </label>
+    <input [(ngModel)]="trabajo.fechaFin" type="text" id="fecha_fin" name="fecha_fin" placeholder="Ingrese una fecha">
+  </div>
+
+  <input class="btn btn-form" type="submit" value="Guardar Cambios">
+</form>

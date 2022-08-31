@@ -1,13 +1,24 @@
 <section id="educacion" *ngIf="listadoEstudios[0]">
   <div class="title-container">
     <h2 class="title">Educacion</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar estudio" (click)="createEstudio()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar estudio" (click)="toogleAddEstudio()"><fa-icon [icon]="iconAdd"></fa-icon></button>
   </div>
+
+  <app-add-educacion
+    *ngIf="showAddEstudio"
+    (onAddEstudio)="addEstudio($event)"
+  ></app-add-educacion>
+
+  <app-update-educacion
+    *ngIf="showUpdateEstudio"
+    [estudio]="estudioSeleccionado"
+    (onUpdateEstudio)="updateEstudio($event)"
+  ></app-update-educacion>
   
   <article *ngFor="let estudio of listadoEstudios">
     <app-educacion-item
       [estudio]="estudio"
-      (onUpdateEstudio)="updateEstudio(estudio)"
+      (onUpdateEstudio)="toogleUpdateEstudio(estudio)"
       (onDeleteEstudio)="deleteEstudio(estudio)"
     ></app-educacion-item>
   </article>

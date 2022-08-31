@@ -5,6 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxTypedJsModule } from 'ngx-typed-js';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { FormsModule } from '@angular/forms';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage, getStorage } from '@angular/fire/storage';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,7 +25,14 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { ProyectosItemComponent } from './components/proyectos-item/proyectos-item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { AddExperienciaComponent } from './components/add-experiencia/add-experiencia.component';
+import { UpdateExperienciaComponent } from './components/update-experiencia/update-experiencia.component';
+import { AddEducacionComponent } from './components/add-educacion/add-educacion.component';
+import { UpdateEducacionComponent } from './components/update-educacion/update-educacion.component';
+import { AddSkillComponent } from './components/add-skill/add-skill.component';
+import { UpdateSkillComponent } from './components/update-skill/update-skill.component';
+import { AddProyectosComponent } from './components/add-proyectos/add-proyectos.component';
+import { UpdateProyectosComponent } from './components/update-proyectos/update-proyectos.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -44,7 +55,15 @@ const appRoutes: Routes = [
     ProyectosComponent,
     ProyectosItemComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    AddExperienciaComponent,
+    UpdateExperienciaComponent,
+    AddEducacionComponent,
+    UpdateEducacionComponent,
+    AddSkillComponent,
+    UpdateSkillComponent,
+    AddProyectosComponent,
+    UpdateProyectosComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +72,9 @@ const appRoutes: Routes = [
     FormsModule,
     FontAwesomeModule,
     NgxTypedJsModule,
-    NgCircleProgressModule.forRoot()
+    NgCircleProgressModule.forRoot(),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [],
   bootstrap: [AppComponent]

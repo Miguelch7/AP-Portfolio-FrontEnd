@@ -11,6 +11,7 @@
   --transparent-black: rgba(0, 0, 0, 0.3);
   --transparent-medium-black: rgba(5, 4, 9, 0.5);
   --transparent-dark-black: rgba(5, 4, 9, 0.9);
+  --transparent-light-green: rgba(43, 128, 63, 0.188);
   --light-green: #43d465;
   --green: #28a745;
   --dark-green: #19772f;
@@ -116,14 +117,20 @@ ul {
   margin: 0 .3rem;
 }
 
-.form-sweet-alert {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  background-color: var(--transparent-light-green);
+  border-radius: 1rem;
+  padding: 1rem 0 1.5rem 0;
+  box-shadow: .2rem .2rem .2rem var(--transparent-medium-black);
+  margin: auto;
+  width: 80%;
 }
 
-.form-sweet-alert .form-control {
+.form .form-control {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -131,18 +138,41 @@ ul {
   width: 80%;
 }
 
-.form-sweet-alert .form-control label {
+.form .form-control label {
   font-size: 1.1rem;
   width: 30%;
 }
 
-.form-sweet-alert .form-control input,
-.form-sweet-alert .form-control textarea {
+.form .form-control input,
+.form .form-control textarea {
   font-size: 1.1rem;
   margin: 1rem 2rem;
   padding: .5rem 1rem;
   resize: none;
   width: 100%;
+  border: .1rem solid var(--dark-grey);
+  border-radius: .3rem;
+}
+
+.form .form-control input[type="file"] {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.form .btn-form {
+  border: none;
+  background-color: var(--green);
+  color: var(--white);
+  padding: .75rem 1.5rem;
+  margin-top: 1rem;
+}
+
+.form .btn-form:hover,
+.form .btn-form:focus {
+  background-color: var(--light-green);
+  cursor: pointer;
+  transition: all .3s ease-in-out;
 }
 
 /* Spinner styles */
@@ -203,5 +233,13 @@ ul {
   .title {
     margin: 1rem;
     text-align: center;
+  }
+
+  .form {
+    width: 95%;
+  }
+
+  .form .form-control {
+    width: 90%;
   }
 } 

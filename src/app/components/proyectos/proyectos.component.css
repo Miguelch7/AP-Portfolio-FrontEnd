@@ -20,6 +20,10 @@
   width: 30%;
 }
 
+.contenedor {
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   #proyectos app-proyectos-item {
     width: 45%;

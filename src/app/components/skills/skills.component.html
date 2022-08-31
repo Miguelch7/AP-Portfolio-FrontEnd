@@ -1,13 +1,26 @@
 <section id="skills" *ngIf="skills[0]">
   <div class="title-container">
     <h2 class="title">Hard & Soft-Skills</h2>
-    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar experiencia" (click)="createSkill()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+    <button *ngIf="authService.isLogged" class="btn-option btn-add" title="Agregar experiencia" (click)="toogleAddSkill()"><fa-icon [icon]="iconAdd"></fa-icon></button>
+  </div>
+
+  <div class="contenedor">
+    <app-add-skill
+      *ngIf="showAddSkill"
+      (onAddSkill)="addSkill($event)"
+    ></app-add-skill>
+
+    <app-update-skill
+      *ngIf="showUpdateSkill"
+      [skill]="skillSeleccionada"
+      (onUpdateSkill)="updateSkill($event)"
+    ></app-update-skill>
   </div>
 
   <app-skills-item
     *ngFor="let skill of skills"
     [skill]="skill"
-    (onUpdateSkill)="updateSkill(skill)"
+    (onUpdateSkill)="toogleUpdateSkill(skill)"
     (onDeleteSkill)="deleteSkill(skill)"
   ></app-skills-item>
 </section>

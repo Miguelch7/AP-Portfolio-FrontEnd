@@ -20,6 +20,10 @@
   width: 15%;
 }
 
+.contenedor {
+  width: 100%;
+}
+
 @media (max-width: 1024px) {
   #skills app-skills-item {
     width: 25%;

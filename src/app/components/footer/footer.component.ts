@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faAt, faUser, faEnvelope, IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedinIn, faFacebookSquare, faInstagram, faGithub, IconDefinition as IconDefinitionBrands } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faGithub, IconDefinition as IconDefinitionBrands } from '@fortawesome/free-brands-svg-icons';
 import Swal from 'sweetalert2';
 import { EmailService } from '../../services/email.service';
 
@@ -20,8 +20,6 @@ export class FooterComponent implements OnInit {
   faAt: IconDefinition = faAt;
   faUser: IconDefinition = faUser;
   faLinkedinIn: IconDefinitionBrands = faLinkedinIn;
-  faFacebookSquare: IconDefinitionBrands = faFacebookSquare;
-  faInstagram: IconDefinitionBrands = faInstagram;
   faGithub: IconDefinitionBrands = faGithub;
   faEnvelope: IconDefinition = faEnvelope;
 
@@ -34,7 +32,12 @@ export class FooterComponent implements OnInit {
 
   async onSubmit(): Promise<void> {
     if (!this.nombre.trim() || !this.email.trim() || !this.mensaje.trim()) {
-      Swal.fire('Error!', 'Todos los campos son obligatorios', 'error');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Todos los campos son obligatorios',
+        icon: 'error',
+        confirmButtonColor: 'var(--green)'
+      });
       return;
     };
 

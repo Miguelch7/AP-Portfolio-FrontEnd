@@ -1,0 +1,33 @@
+<form 
+  class="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h2>Nuevo Proyecto</h2>
+
+  <div class="form-control">
+    <label for="nombre">Nombre: </label>
+    <input [(ngModel)]="nombre" type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del proyecto">
+  </div>
+  
+  <div class="form-control">
+    <label for="descripcion">Descripción: </label>
+    <textarea [(ngModel)]="descripcion" id="descripcion" name="descripcion" placeholder="Ingrese una descripcion" row="10"></textarea>
+  </div>
+
+  <div class="form-control">
+    <label for="imagen">Imagen: </label>
+    <input (change)="capturarArchivo($event)" type="file" id="imagen" name="imagen" placeholder="Ingrese la imagen">
+  </div>
+
+  <div class="form-control">
+    <label for="link_proyecto">Fecha de inicio: </label>
+    <input [(ngModel)]="linkProyecto" type="text" id="link_proyecto" name="link_proyecto" placeholder="Ingrese el link del proyecto">
+  </div>
+
+  <div class="form-control">
+    <label for="link_repositorio">Fecha de finalización: </label>
+    <input [(ngModel)]="linkRepositorio" type="text" id="link_repositorio" name="link_repositorio" placeholder="Ingrese el link del repositorio">
+  </div>
+
+  <input class="btn btn-form" type="submit" value="Añadir Proyecto">
+</form>

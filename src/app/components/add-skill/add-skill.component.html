@@ -1,0 +1,28 @@
+<form 
+  class="form"
+  (ngSubmit)="onSubmit()"
+>
+  <h2>Nueva Skill</h2>
+
+  <div class="form-control">
+    <label for="nombre">Nombre: </label>
+    <input [(ngModel)]="nombre" type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre de la skill">
+  </div>
+
+  <div class="form-control">
+    <label for="descripcion">Descripción: </label>
+    <textarea [(ngModel)]="descripcion" id="descripcion" name="descripcion" placeholder="Ingrese una descripcion" row="10"></textarea>
+  </div>
+
+  <div class="form-control">
+    <label for="imagen">Imagen: </label>
+    <input (change)="capturarArchivo($event)" type="file" id="imagen" name="imagen" placeholder="Ingrese una imagen">
+  </div>
+
+  <div class="form-control">
+    <label for="porcentaje">Porcentaje: </label>
+    <input [(ngModel)]="porcentaje" type="text" id="porcentaje" name="porcentaje" placeholder="Ingrese un porcentaje">
+  </div>
+
+  <input class="btn btn-form" type="submit" value="Añadir Skill">
+</form>
